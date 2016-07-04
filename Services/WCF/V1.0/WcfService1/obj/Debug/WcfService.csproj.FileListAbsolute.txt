@@ -1,0 +1,8 @@
+E:\WorkSpace\0.公用经验\MyCode\VL\Services\WCF\V1.0\WcfService1\bin\WcfService1.dll.config
+E:\WorkSpace\0.公用经验\MyCode\VL\Services\WCF\V1.0\WcfService1\bin\WcfService1.dll
+E:\WorkSpace\0.公用经验\MyCode\VL\Services\WCF\V1.0\WcfService1\bin\WcfService1.pdb
+E:\WorkSpace\0.公用经验\MyCode\VL\Services\WCF\V1.0\WcfService1\obj\Debug\WcfService.csprojResolveAssemblyReference.cache
+E:\WorkSpace\0.公用经验\MyCode\VL\Services\WCF\V1.0\WcfService1\obj\Debug\WcfService1.dll
+E:\WorkSpace\0.公用经验\MyCode\VL\Services\WCF\V1.0\WcfService1\obj\Debug\WcfService1.pdb
+E:\WorkSpace\0.公用经验\MyCode\VL\Services\WCF\V1.0\WcfService1\bin\WcfServiceLibrary1.dll
+E:\WorkSpace\0.公用经验\MyCode\VL\Services\WCF\V1.0\WcfService1\bin\WcfServiceLibrary1.pdb

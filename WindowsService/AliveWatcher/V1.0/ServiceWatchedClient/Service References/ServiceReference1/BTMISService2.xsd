@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BTMIS.DataEntity" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BTMIS.DataEntity" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://192.168.2.113/BTMISService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Sui.ComponentModel" />
+  <xs:complexType name="Problemreport">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Sui.ComponentModel" base="q1:DataModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="a" type="xs:int" />
+          <xs:element minOccurs="0" name="b" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="c" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="d" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="e" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="f" type="xs:int" />
+          <xs:element minOccurs="0" name="g" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="h" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="i" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="j" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="x" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="y" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Problemreport" nillable="true" type="tns:Problemreport" />
+  <xs:complexType name="Cadfile">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Sui.ComponentModel" base="q2:DataModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="a" type="xs:int" />
+          <xs:element minOccurs="0" name="b" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="c" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="d" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="e" type="xs:double" />
+          <xs:element minOccurs="0" name="f" type="xs:double" />
+          <xs:element minOccurs="0" name="g" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Cadfile" nillable="true" type="tns:Cadfile" />
+  <xs:complexType name="ArrayOfC">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="C" nillable="true" type="tns:C" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfC" nillable="true" type="tns:ArrayOfC" />
+  <xs:complexType name="C">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Sui.ComponentModel" base="q3:ModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="a" type="xs:int" />
+          <xs:element minOccurs="0" name="b" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="c" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="d" type="xs:int" />
+          <xs:element minOccurs="0" name="e" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="f" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="g" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="h" type="xs:float" />
+          <xs:element minOccurs="0" name="i" nillable="true" type="xs:float" />
+          <xs:element minOccurs="0" name="j" nillable="true" type="xs:float" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="C" nillable="true" type="tns:C" />
+  <xs:complexType name="ArrayOfCadBalisePosition">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CadBalisePosition" nillable="true" type="tns:CadBalisePosition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCadBalisePosition" nillable="true" type="tns:ArrayOfCadBalisePosition" />
+  <xs:complexType name="CadBalisePosition">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/Sui.ComponentModel" base="q4:DataModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BaliseName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BaliseNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="a" type="xs:int" />
+          <xs:element minOccurs="0" name="b" type="xs:int" />
+          <xs:element minOccurs="0" name="c" type="xs:int" />
+          <xs:element minOccurs="0" name="d" type="xs:double" />
+          <xs:element minOccurs="0" name="e" type="xs:double" />
+          <xs:element minOccurs="0" name="f" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CadBalisePosition" nillable="true" type="tns:CadBalisePosition" />
+  <xs:complexType name="Operation">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/Sui.ComponentModel" base="q5:DataModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BaliseName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BaliseType" type="xs:int" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="a" type="xs:int" />
+          <xs:element minOccurs="0" name="b" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="c" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="d" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="e" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="f" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="g" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="h" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="i" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="j" type="xs:int" />
+          <xs:element minOccurs="0" name="k" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="l" type="xs:int" />
+          <xs:element minOccurs="0" name="m" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="n" type="xs:int" />
+          <xs:element minOccurs="0" name="o" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Operation" nillable="true" type="tns:Operation" />
+  <xs:complexType name="Telegram">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/Sui.ComponentModel" base="q6:DataModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BaliseName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="a" type="xs:int" />
+          <xs:element minOccurs="0" name="b" type="xs:int" />
+          <xs:element minOccurs="0" name="c" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="d" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="e" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="f" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="g" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="h" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="i" type="xs:int" />
+          <xs:element minOccurs="0" name="j" type="xs:int" />
+          <xs:element minOccurs="0" name="k" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="l" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="m" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Telegram" nillable="true" type="tns:Telegram" />
+  <xs:complexType name="ArrayOfTelegram">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Telegram" nillable="true" type="tns:Telegram" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTelegram" nillable="true" type="tns:ArrayOfTelegram" />
+  <xs:complexType name="ArrayOfCadposition">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cadposition" nillable="true" type="tns:Cadposition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCadposition" nillable="true" type="tns:ArrayOfCadposition" />
+  <xs:complexType name="Cadposition">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/Sui.ComponentModel" base="q7:DataModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FilePath" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LineName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StationName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="a" type="xs:int" />
+          <xs:element minOccurs="0" name="b" type="xs:int" />
+          <xs:element minOccurs="0" name="c" type="xs:int" />
+          <xs:element minOccurs="0" name="d" type="xs:int" />
+          <xs:element minOccurs="0" name="e" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="f" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Cadposition" nillable="true" type="tns:Cadposition" />
+  <xs:complexType name="Cadimage">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/Sui.ComponentModel" base="q8:DataModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="a" type="xs:int" />
+          <xs:element minOccurs="0" name="b" type="xs:int" />
+          <xs:element minOccurs="0" name="c" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="d" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="e" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="f" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Cadimage" nillable="true" type="tns:Cadimage" />
+  <xs:complexType name="ArrayOfCompare">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Compare" nillable="true" type="tns:Compare" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCompare" nillable="true" type="tns:ArrayOfCompare" />
+  <xs:complexType name="Compare">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="a" type="xs:int" />
+      <xs:element minOccurs="0" name="b" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="c" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="d" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="e" type="xs:int" />
+      <xs:element minOccurs="0" name="f" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="g" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="h" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="i" type="xs:int" />
+      <xs:element minOccurs="0" name="j" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="k" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="l" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="m" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="n" type="xs:int" />
+      <xs:element minOccurs="0" name="o" type="xs:int" />
+      <xs:element minOccurs="0" name="p" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Compare" nillable="true" type="tns:Compare" />
+  <xs:complexType name="Attachment">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/Sui.ComponentModel" base="q9:DataModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="a" type="xs:int" />
+          <xs:element minOccurs="0" name="b" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="c" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="d" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="e" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="f" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ispicture" type="xs:boolean" />
+          <xs:element minOccurs="0" name="targetid" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Attachment" nillable="true" type="tns:Attachment" />
+  <xs:complexType name="ArrayOfAttachment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Attachment" nillable="true" type="tns:Attachment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAttachment" nillable="true" type="tns:ArrayOfAttachment" />
+  <xs:complexType name="ArrayOfProblemreport">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Problemreport" nillable="true" type="tns:Problemreport" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProblemreport" nillable="true" type="tns:ArrayOfProblemreport" />
+  <xs:complexType name="ArrayOfOperation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Operation" nillable="true" type="tns:Operation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOperation" nillable="true" type="tns:ArrayOfOperation" />
+  <xs:complexType name="ArrayOfSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Summary" nillable="true" type="tns:Summary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSummary" nillable="true" type="tns:ArrayOfSummary" />
+  <xs:complexType name="Summary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BType" type="xs:int" />
+      <xs:element minOccurs="0" name="LastTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlantName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="a" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="b" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="c" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Summary" nillable="true" type="tns:Summary" />
+  <xs:complexType name="ArrayOfPhoto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Photo" nillable="true" type="tns:Photo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPhoto" nillable="true" type="tns:ArrayOfPhoto" />
+  <xs:complexType name="Photo">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/Sui.ComponentModel" base="q10:DataModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="a" type="xs:int" />
+          <xs:element minOccurs="0" name="b" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="c" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="d" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Photo" nillable="true" type="tns:Photo" />
+  <xs:complexType name="ArrayOfLogrecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Logrecord" nillable="true" type="tns:Logrecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLogrecord" nillable="true" type="tns:ArrayOfLogrecord" />
+  <xs:complexType name="Logrecord">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q11="http://schemas.datacontract.org/2004/07/Sui.ComponentModel" base="q11:DataModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="OperationUser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="a" type="xs:int" />
+          <xs:element minOccurs="0" name="b" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="c" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="d" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="e" type="xs:int" />
+          <xs:element minOccurs="0" name="f" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="g" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="h" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Logrecord" nillable="true" type="tns:Logrecord" />
+  <xs:complexType name="ArrayOfErrorratio">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Errorratio" nillable="true" type="tns:Errorratio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfErrorratio" nillable="true" type="tns:ArrayOfErrorratio" />
+  <xs:complexType name="Errorratio">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q12="http://schemas.datacontract.org/2004/07/Sui.ComponentModel" base="q12:DataModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="OperationUser" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="a" type="xs:int" />
+          <xs:element minOccurs="0" name="b" type="xs:int" />
+          <xs:element minOccurs="0" name="c" type="xs:int" />
+          <xs:element minOccurs="0" name="d" type="xs:int" />
+          <xs:element minOccurs="0" name="e" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="f" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="g" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="h" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="i" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Errorratio" nillable="true" type="tns:Errorratio" />
+  <xs:complexType name="Userinfo">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q13="http://schemas.datacontract.org/2004/07/Sui.ComponentModel" base="q13:DataModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PlantName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="a" type="xs:int" />
+          <xs:element minOccurs="0" name="b" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="c" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="d" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="e" type="xs:int" />
+          <xs:element minOccurs="0" name="f" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="g" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Userinfo" nillable="true" type="tns:Userinfo" />
+  <xs:complexType name="ArrayOfUserinfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Userinfo" nillable="true" type="tns:Userinfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserinfo" nillable="true" type="tns:ArrayOfUserinfo" />
+  <xs:complexType name="ArrayOfGroupinfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Groupinfo" nillable="true" type="tns:Groupinfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGroupinfo" nillable="true" type="tns:ArrayOfGroupinfo" />
+  <xs:complexType name="Groupinfo">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q14="http://schemas.datacontract.org/2004/07/Sui.ComponentModel" base="q14:DataModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="a" type="xs:int" />
+          <xs:element minOccurs="0" name="b" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="c" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="d" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Groupinfo" nillable="true" type="tns:Groupinfo" />
+  <xs:complexType name="ArrayOfTask">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Task" nillable="true" type="tns:Task" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTask" nillable="true" type="tns:ArrayOfTask" />
+  <xs:complexType name="Task">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q15="http://schemas.datacontract.org/2004/07/Sui.ComponentModel" base="q15:DataModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="a" type="xs:int" />
+          <xs:element minOccurs="0" name="b" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="c" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="d" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="e" type="xs:int" />
+          <xs:element minOccurs="0" name="f" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="g" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="h" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="i" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="j" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="k" type="xs:int" />
+          <xs:element minOccurs="0" name="l" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="m" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="n" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="o" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="p" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="x" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="y" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="z" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Task" nillable="true" type="tns:Task" />
+  <xs:complexType name="ArrayOfBalise">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Balise" nillable="true" type="tns:Balise" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBalise" nillable="true" type="tns:ArrayOfBalise" />
+  <xs:complexType name="Balise">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q16="http://schemas.datacontract.org/2004/07/Sui.ComponentModel" base="q16:DataModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ImageFilePath" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ImageId" type="xs:int" />
+          <xs:element minOccurs="0" name="ImagePath" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LineFileId" type="xs:int" />
+          <xs:element minOccurs="0" name="LineName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LineX" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LineY" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PlantName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StationCBPId" type="xs:int" />
+          <xs:element minOccurs="0" name="StationFileId" type="xs:int" />
+          <xs:element minOccurs="0" name="StationName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StationX" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StationY" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="_lineCBPId" type="xs:int" />
+          <xs:element minOccurs="0" name="a" type="xs:int" />
+          <xs:element minOccurs="0" name="b" type="xs:int" />
+          <xs:element minOccurs="0" name="c" type="xs:int" />
+          <xs:element minOccurs="0" name="d" type="xs:int" />
+          <xs:element minOccurs="0" name="e" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="f" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="g" type="xs:int" />
+          <xs:element minOccurs="0" name="h" type="xs:int" />
+          <xs:element minOccurs="0" name="i" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="j" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Balise" nillable="true" type="tns:Balise" />
+  <xs:complexType name="Systemconfig">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q17="http://schemas.datacontract.org/2004/07/Sui.ComponentModel" base="q17:DataModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="a" type="xs:int" />
+          <xs:element minOccurs="0" name="b" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="c" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="d" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="e" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Systemconfig" nillable="true" type="tns:Systemconfig" />
+  <xs:complexType name="ArrayOfLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Line" nillable="true" type="tns:Line" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLine" nillable="true" type="tns:ArrayOfLine" />
+  <xs:complexType name="Line">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q18="http://schemas.datacontract.org/2004/07/Sui.ComponentModel" base="q18:DataModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="a" type="xs:int" />
+          <xs:element minOccurs="0" name="b" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="c" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="d" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Line" nillable="true" type="tns:Line" />
+  <xs:complexType name="Basics">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q19="http://schemas.datacontract.org/2004/07/Sui.ComponentModel" base="q19:DataModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="a" type="xs:int" />
+          <xs:element minOccurs="0" name="b" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="c" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="d" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Basics" nillable="true" type="tns:Basics" />
+  <xs:complexType name="ArrayOfBasics">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Basics" nillable="true" type="tns:Basics" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBasics" nillable="true" type="tns:ArrayOfBasics" />
+  <xs:complexType name="ArrayOfSection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Section" nillable="true" type="tns:Section" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSection" nillable="true" type="tns:ArrayOfSection" />
+  <xs:complexType name="Section">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q20="http://schemas.datacontract.org/2004/07/Sui.ComponentModel" base="q20:DataModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="a" type="xs:int" />
+          <xs:element minOccurs="0" name="b" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="c" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Section" nillable="true" type="tns:Section" />
+  <xs:complexType name="ArrayOfPlant">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Plant" nillable="true" type="tns:Plant" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlant" nillable="true" type="tns:ArrayOfPlant" />
+  <xs:complexType name="Plant">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q21="http://schemas.datacontract.org/2004/07/Sui.ComponentModel" base="q21:DataModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SectionName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="a" type="xs:int" />
+          <xs:element minOccurs="0" name="b" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="c" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Plant" nillable="true" type="tns:Plant" />
+  <xs:complexType name="ArrayOfStation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Station" nillable="true" type="tns:Station" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStation" nillable="true" type="tns:ArrayOfStation" />
+  <xs:complexType name="Station">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q22="http://schemas.datacontract.org/2004/07/Sui.ComponentModel" base="q22:DataModelBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PlantName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="a" type="xs:int" />
+          <xs:element minOccurs="0" name="b" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="c" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="d" type="xs:int" />
+          <xs:element minOccurs="0" name="e" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="f" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Station" nillable="true" type="tns:Station" />
+  <xs:complexType name="ArrayOfSystemconfig">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Systemconfig" nillable="true" type="tns:Systemconfig" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSystemconfig" nillable="true" type="tns:ArrayOfSystemconfig" />
+</xs:schema>

@@ -1,0 +1,3317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BTMISService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IBTMISService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://192.168.2.113/BTMISService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://192.168.2.113/BTMISService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://192.168.2.113/BTMISService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BTMIS.DataEntity" />
+      <xsd:import schemaLocation="https://192.168.2.113/BTMISService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Sui.ComponentModel" />
+      <xsd:import schemaLocation="https://192.168.2.113/BTMISService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="https://192.168.2.113/BTMISService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/BTMIS.DataEntity.AndroidEntity" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IBTMISService_ModifyProblemReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyProblemReport" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_ModifyProblemReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyProblemReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetCadfileById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCadfileById" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetCadfileById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCadfileByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetAllCadItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCadItems" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetAllCadItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCadItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetAllCadBalisePositionByFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCadBalisePositionByFile" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetAllCadBalisePositionByFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCadBalisePositionByFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetCompareTelegram_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompareTelegram" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetCompareTelegram_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompareTelegramResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetAllTelegrams_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTelegrams" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetAllTelegrams_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTelegramsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetCadPositionRowCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCadPositionRowCount" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetCadPositionRowCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCadPositionRowCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetCadPositions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCadPositions" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetCadPositions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCadPositionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddCadPosition_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCadPosition" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddCadPosition_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCadPositionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_ModifyPosition_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyPosition" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_ModifyPosition_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyPositionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DeletePosition_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePosition" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DeletePosition_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePositionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetCADFileIdByLineId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCADFileIdByLineId" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetCADFileIdByLineId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCADFileIdByLineIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetCADFileIdByStationId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCADFileIdByStationId" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetCADFileIdByStationId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCADFileIdByStationIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsExistCADLineId_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsExistCADLineId" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsExistCADLineId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsExistCADLineIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsExistCADStationId_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsExistCADStationId" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsExistCADStationId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsExistCADStationIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsCADFileCanDelete_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsCADFileCanDelete" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsCADFileCanDelete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsCADFileCanDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddCadimage_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCadimage" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddCadimage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCadimageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_ModifyCadimage_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyCadimage" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_ModifyCadimage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyCadimageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetCadBalisePosByBaliseName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCadBalisePosByBaliseName" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetCadBalisePosByBaliseName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCadBalisePosByBaliseNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddCadBalisePos_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCadBalisePos" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddCadBalisePos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCadBalisePosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_ModifyCadBalisePos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyCadBalisePos" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_ModifyCadBalisePos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyCadBalisePosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_ModifyCadfileDefaultScale_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyCadfileDefaultScale" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_ModifyCadfileDefaultScale_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyCadfileDefaultScaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetTelegramByBaliseId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTelegramByBaliseId" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetTelegramByBaliseId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTelegramByBaliseIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_ExportCompare_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExportCompare" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_ExportCompare_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExportCompareResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_ImportTelegrams_InputMessage">
+    <wsdl:part name="parameters" element="tns:ImportTelegrams" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_ImportTelegrams_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ImportTelegramsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_ImportTelegramsFailedBack_InputMessage">
+    <wsdl:part name="parameters" element="tns:ImportTelegramsFailedBack" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_ImportTelegramsFailedBack_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ImportTelegramsFailedBackResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddAttachment_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAttachment" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddAttachment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAttachmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetAttachments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAttachments" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetAttachments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAttachmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DeleteAttachment_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAttachment" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DeleteAttachment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAttachmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DeleteAttachments_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAttachments" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DeleteAttachments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAttachmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetProblemReportRowCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProblemReportRowCount" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetProblemReportRowCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProblemReportRowCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetProblemReports_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProblemReports" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetProblemReports_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProblemReportsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DeleteTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTask" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DeleteTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetOperationRowCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationRowCount" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetOperationRowCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationRowCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetOperations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperations" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetOperations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetOperationsByPartBaliseNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationsByPartBaliseNo" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetOperationsByPartBaliseNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationsByPartBaliseNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_modifyOperation_InputMessage">
+    <wsdl:part name="parameters" element="tns:modifyOperation" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_modifyOperation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:modifyOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetOperationSummaryRowCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationSummaryRowCount" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetOperationSummaryRowCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationSummaryRowCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetOperationSummary_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationSummary" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetOperationSummary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationSummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddOperationToTelegram_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddOperationToTelegram" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddOperationToTelegram_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddOperationToTelegramResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetOperationByGuid_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationByGuid" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetOperationByGuid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationByGuidResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetPhotoByOperationGuid_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPhotoByOperationGuid" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetPhotoByOperationGuid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPhotoByOperationGuidResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetPhotoImageData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPhotoImageData" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetPhotoImageData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPhotoImageDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetPreviewImageData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPreviewImageData" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetPreviewImageData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPreviewImageDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetLogrecordRowCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLogrecordRowCount" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetLogrecordRowCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLogrecordRowCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetLogrecords_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLogrecords" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetLogrecords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLogrecordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetAllLogrecords_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLogrecords" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetAllLogrecords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLogrecordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetErrorratioRowCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetErrorratioRowCount" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetErrorratioRowCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetErrorratioRowCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetErrorratios_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetErrorratios" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetErrorratios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetErrorratiosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetTelegramRowCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTelegramRowCount" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetTelegramRowCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTelegramRowCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetTelegrams_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTelegrams" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetTelegrams_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTelegramsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddTelegram_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTelegram" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddTelegram_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTelegramResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_ModifyTelegram_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyTelegram" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_ModifyTelegram_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyTelegramResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DisableTelegram_InputMessage">
+    <wsdl:part name="parameters" element="tns:DisableTelegram" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DisableTelegram_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisableTelegramResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsBaliseNoCanUse_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsBaliseNoCanUse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsBaliseNoCanUse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsBaliseNoCanUseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsMCountCanUse_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsMCountCanUse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsMCountCanUse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsMCountCanUseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetTelegramByBaliseNoAndMCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTelegramByBaliseNoAndMCount" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetTelegramByBaliseNoAndMCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTelegramByBaliseNoAndMCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetTelegramsByBaliseNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTelegramsByBaliseNo" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetTelegramsByBaliseNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTelegramsByBaliseNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetTelegramById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTelegramById" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetTelegramById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTelegramByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsTelegramExists_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsTelegramExists" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsTelegramExists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsTelegramExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_ModifyUserinfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyUserinfo" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_ModifyUserinfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyUserinfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DeleteUserinfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserinfo" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DeleteUserinfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserinfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetAllUserinfos_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUserinfos" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetAllUserinfos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUserinfosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsExistSameUserName_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsExistSameUserName" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsExistSameUserName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsExistSameUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsExistSameUserPhone_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsExistSameUserPhone" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsExistSameUserPhone_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsExistSameUserPhoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsExistSameUserWorkno_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsExistSameUserWorkno" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsExistSameUserWorkno_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsExistSameUserWorknoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetAction_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAction" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetAction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetGroupinfoRowCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupinfoRowCount" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetGroupinfoRowCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupinfoRowCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetGroupinfos_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupinfos" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetGroupinfos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupinfosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddGroupinfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddGroupinfo" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddGroupinfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddGroupinfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_ModifyGroupinfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyGroupinfo" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_ModifyGroupinfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyGroupinfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DeleteGroupinfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGroupinfo" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DeleteGroupinfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGroupinfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetAllGroupinfos_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllGroupinfos" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetAllGroupinfos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllGroupinfosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetNonEmptyGroupinfos_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNonEmptyGroupinfos" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetNonEmptyGroupinfos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNonEmptyGroupinfosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsExistSameGroupNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsExistSameGroupNo" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsExistSameGroupNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsExistSameGroupNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsExistSameGroupName_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsExistSameGroupName" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsExistSameGroupName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsExistSameGroupNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetGroupUserinfos_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupUserinfos" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetGroupUserinfos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupUserinfosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetOtherUserinfos_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOtherUserinfos" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetOtherUserinfos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOtherUserinfosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_UpdateGroupMember_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateGroupMember" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_UpdateGroupMember_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateGroupMemberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetTaskRowCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskRowCount" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetTaskRowCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaskRowCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetTasks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTasks" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetTasks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTasksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTask" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddTasks_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTasks" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddTasks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTasksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddGroupTasks_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddGroupTasks" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddGroupTasks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddGroupTasksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddTaskWithAttachments_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTaskWithAttachments" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddTaskWithAttachments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTaskWithAttachmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddGroupTasksWithAttachments_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddGroupTasksWithAttachments" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddGroupTasksWithAttachments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddGroupTasksWithAttachmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_ModifyTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyTask" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_ModifyTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetConfigValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConfigValue" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetConfigValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConfigValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddSystemConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSystemConfig" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddSystemConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSystemConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_ModifySystemConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifySystemConfig" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_ModifySystemConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifySystemConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DeleteSystemConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSystemConfig" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DeleteSystemConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSystemConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetLineRowCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLineRowCount" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetLineRowCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLineRowCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetLines_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLines" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetLines_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLinesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddLine_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddLine" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddLine_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_ModifyLine_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyLine" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_ModifyLine_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DeleteLine_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteLine" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DeleteLine_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsExistSameLineName_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsExistSameLineName" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsExistSameLineName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsExistSameLineNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetAllLines_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLines" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetAllLines_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLinesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetBaliseRowCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBaliseRowCount" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetBaliseRowCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBaliseRowCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetBalises_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBalises" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetBalises_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBalisesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddBalise_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddBalise" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddBalise_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddBaliseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_ModifyBalise_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyBalise" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_ModifyBalise_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyBaliseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DeleteBalise_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBalise" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DeleteBalise_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBaliseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsExistSameBaliseNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsExistSameBaliseNo" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsExistSameBaliseNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsExistSameBaliseNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetAllBalise_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBalise" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetAllBalise_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBaliseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetBaliseById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBaliseById" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetBaliseById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBaliseByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetBaliseByNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBaliseByNo" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetBaliseByNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBaliseByNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetBaliseByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBaliseByName" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetBaliseByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBaliseByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetBaliseWithCADPosition_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBaliseWithCADPosition" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetBaliseWithCADPosition_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBaliseWithCADPositionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetBaliseWithCADFileId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBaliseWithCADFileId" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetBaliseWithCADFileId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBaliseWithCADFileIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsBaliseIncludeTelegram_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsBaliseIncludeTelegram" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsBaliseIncludeTelegram_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsBaliseIncludeTelegramResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetBaliseByPlantAndStation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBaliseByPlantAndStation" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetBaliseByPlantAndStation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBaliseByPlantAndStationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetUserinfoRowCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserinfoRowCount" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetUserinfoRowCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserinfoRowCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetUserinfos_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserinfos" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetUserinfos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserinfosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddUserinfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserinfo" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddUserinfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserinfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetBasic_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBasic" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetBasic_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBasicResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetAllBasics_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBasics" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetAllBasics_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBasicsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetSectionRowCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSectionRowCount" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetSectionRowCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSectionRowCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetSections_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSections" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetSections_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSectionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddSection_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSection" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddSection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_ModifySection_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifySection" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_ModifySection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifySectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DeleteSection_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSection" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DeleteSection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetAllSections_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSections" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetAllSections_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSectionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsExistSameSectionName_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsExistSameSectionName" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsExistSameSectionName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsExistSameSectionNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetPlantRowCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlantRowCount" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetPlantRowCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlantRowCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetPlants_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlants" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetPlants_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlantsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddPlant_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPlant" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddPlant_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPlantResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_ModifyPlant_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyPlant" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_ModifyPlant_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyPlantResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DeletePlant_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePlant" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DeletePlant_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePlantResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetAllPlants_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPlants" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetAllPlants_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPlantsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsExistSamePlantName_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsExistSamePlantName" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsExistSamePlantName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsExistSamePlantNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetStationRowCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStationRowCount" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetStationRowCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStationRowCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetStations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStations" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetStations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddStation_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddStation" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddStation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddStationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_ModifyStation_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyStation" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_ModifyStation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyStationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DeleteStation_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteStation" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DeleteStation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteStationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsExistSameStationName_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsExistSameStationName" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsExistSameStationName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsExistSameStationNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsExistSameStationNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsExistSameStationNo" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsExistSameStationNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsExistSameStationNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetAllStations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllStations" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetAllStations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllStationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetStationByNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStationByNo" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetStationByNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStationByNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsStationUsing_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsStationUsing" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsStationUsing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsStationUsingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetAllSystemconfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSystemconfig" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetAllSystemconfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSystemconfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_UploadSystemConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadSystemConfig" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_UploadSystemConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadSystemConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetDateTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDateTime" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetDateTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDateTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_TryLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:TryLogin" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_TryLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TryLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_VerifyPhoneNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyPhoneNo" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_VerifyPhoneNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyPhoneNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DownloadTaskInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadTaskInfo" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DownloadTaskInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadTaskInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DownloadCompare_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadCompare" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DownloadCompare_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadCompareResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DownloadAllCompare_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadAllCompare" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DownloadAllCompare_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadAllCompareResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_SignTaskDownload_InputMessage">
+    <wsdl:part name="parameters" element="tns:SignTaskDownload" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_SignTaskDownload_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SignTaskDownloadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DownloadCadImageInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadCadImageInfo" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DownloadCadImageInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadCadImageInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_UploadOperations_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadOperations" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_UploadOperations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadOperationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_UploadPhotos_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadPhotos" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_UploadPhotos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadPhotosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_UploadTaskProgress_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadTaskProgress" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_UploadTaskProgress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadTaskProgressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DownloadDateTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadDateTime" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DownloadDateTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadDateTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DownloadSystemConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadSystemConfig" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DownloadSystemConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadSystemConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_UploadErrorratios_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadErrorratios" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_UploadErrorratios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadErrorratiosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_UploadLogrecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadLogrecord" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_UploadLogrecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadLogrecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AppendPhotoFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:AppendPhotoFile" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AppendPhotoFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AppendPhotoFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_NewPhotoFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:NewPhotoFile" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_NewPhotoFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NewPhotoFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DownloadCadImage_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadCadImage" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DownloadCadImage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadCadImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DownloadAttachment_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadAttachment" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DownloadAttachment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadAttachmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DownloadAttachmentInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadAttachmentInfo" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DownloadAttachmentInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadAttachmentInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_UploadProblems_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadProblems" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_UploadProblems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadProblemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddBasics_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddBasics" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddBasics_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddBasicsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddBackBasics_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddBackBasics" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_AddBackBasics_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddBackBasicsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsExistBasicsName_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsExistBasicsName" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_IsExistBasicsName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsExistBasicsNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetBasicsRowCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBasicsRowCount" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetBasicsRowCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBasicsRowCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetBasics_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBasics" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_GetBasics_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBasicsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_ModifyBasics_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyBasics" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_ModifyBasics_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyBasicsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DeleteBasics_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBasics" />
+  </wsdl:message>
+  <wsdl:message name="IBTMISService_DeleteBasics_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBasicsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IBTMISService">
+    <wsdl:operation name="ModifyProblemReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/ModifyProblemReport" message="tns:IBTMISService_ModifyProblemReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/ModifyProblemReportResponse" message="tns:IBTMISService_ModifyProblemReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCadfileById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetCadfileById" message="tns:IBTMISService_GetCadfileById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetCadfileByIdResponse" message="tns:IBTMISService_GetCadfileById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCadItems">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetAllCadItems" message="tns:IBTMISService_GetAllCadItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetAllCadItemsResponse" message="tns:IBTMISService_GetAllCadItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCadBalisePositionByFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetAllCadBalisePositionByFile" message="tns:IBTMISService_GetAllCadBalisePositionByFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetAllCadBalisePositionByFileResponse" message="tns:IBTMISService_GetAllCadBalisePositionByFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompareTelegram">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetCompareTelegram" message="tns:IBTMISService_GetCompareTelegram_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetCompareTelegramResponse" message="tns:IBTMISService_GetCompareTelegram_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTelegrams">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetAllTelegrams" message="tns:IBTMISService_GetAllTelegrams_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetAllTelegramsResponse" message="tns:IBTMISService_GetAllTelegrams_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCadPositionRowCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetCadPositionRowCount" message="tns:IBTMISService_GetCadPositionRowCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetCadPositionRowCountResponse" message="tns:IBTMISService_GetCadPositionRowCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCadPositions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetCadPositions" message="tns:IBTMISService_GetCadPositions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetCadPositionsResponse" message="tns:IBTMISService_GetCadPositions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCadPosition">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/AddCadPosition" message="tns:IBTMISService_AddCadPosition_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/AddCadPositionResponse" message="tns:IBTMISService_AddCadPosition_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyPosition">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/ModifyPosition" message="tns:IBTMISService_ModifyPosition_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/ModifyPositionResponse" message="tns:IBTMISService_ModifyPosition_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePosition">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/DeletePosition" message="tns:IBTMISService_DeletePosition_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/DeletePositionResponse" message="tns:IBTMISService_DeletePosition_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCADFileIdByLineId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetCADFileIdByLineId" message="tns:IBTMISService_GetCADFileIdByLineId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetCADFileIdByLineIdResponse" message="tns:IBTMISService_GetCADFileIdByLineId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCADFileIdByStationId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetCADFileIdByStationId" message="tns:IBTMISService_GetCADFileIdByStationId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetCADFileIdByStationIdResponse" message="tns:IBTMISService_GetCADFileIdByStationId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsExistCADLineId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/IsExistCADLineId" message="tns:IBTMISService_IsExistCADLineId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/IsExistCADLineIdResponse" message="tns:IBTMISService_IsExistCADLineId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsExistCADStationId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/IsExistCADStationId" message="tns:IBTMISService_IsExistCADStationId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/IsExistCADStationIdResponse" message="tns:IBTMISService_IsExistCADStationId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsCADFileCanDelete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/IsCADFileCanDelete" message="tns:IBTMISService_IsCADFileCanDelete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/IsCADFileCanDeleteResponse" message="tns:IBTMISService_IsCADFileCanDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCadimage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/AddCadimage" message="tns:IBTMISService_AddCadimage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/AddCadimageResponse" message="tns:IBTMISService_AddCadimage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyCadimage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/ModifyCadimage" message="tns:IBTMISService_ModifyCadimage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/ModifyCadimageResponse" message="tns:IBTMISService_ModifyCadimage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCadBalisePosByBaliseName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetCadBalisePosByBaliseName" message="tns:IBTMISService_GetCadBalisePosByBaliseName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetCadBalisePosByBaliseNameResponse" message="tns:IBTMISService_GetCadBalisePosByBaliseName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCadBalisePos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/AddCadBalisePos" message="tns:IBTMISService_AddCadBalisePos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/AddCadBalisePosResponse" message="tns:IBTMISService_AddCadBalisePos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyCadBalisePos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/ModifyCadBalisePos" message="tns:IBTMISService_ModifyCadBalisePos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/ModifyCadBalisePosResponse" message="tns:IBTMISService_ModifyCadBalisePos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyCadfileDefaultScale">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/ModifyCadfileDefaultScale" message="tns:IBTMISService_ModifyCadfileDefaultScale_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/ModifyCadfileDefaultScaleResponse" message="tns:IBTMISService_ModifyCadfileDefaultScale_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTelegramByBaliseId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetTelegramByBaliseId" message="tns:IBTMISService_GetTelegramByBaliseId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetTelegramByBaliseIdResponse" message="tns:IBTMISService_GetTelegramByBaliseId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportCompare">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/ExportCompare" message="tns:IBTMISService_ExportCompare_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/ExportCompareResponse" message="tns:IBTMISService_ExportCompare_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportTelegrams">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/ImportTelegrams" message="tns:IBTMISService_ImportTelegrams_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/ImportTelegramsResponse" message="tns:IBTMISService_ImportTelegrams_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportTelegramsFailedBack">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/ImportTelegramsFailedBack" message="tns:IBTMISService_ImportTelegramsFailedBack_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/ImportTelegramsFailedBackResponse" message="tns:IBTMISService_ImportTelegramsFailedBack_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAttachment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/AddAttachment" message="tns:IBTMISService_AddAttachment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/AddAttachmentResponse" message="tns:IBTMISService_AddAttachment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetAttachments" message="tns:IBTMISService_GetAttachments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetAttachmentsResponse" message="tns:IBTMISService_GetAttachments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAttachment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/DeleteAttachment" message="tns:IBTMISService_DeleteAttachment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/DeleteAttachmentResponse" message="tns:IBTMISService_DeleteAttachment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAttachments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/DeleteAttachments" message="tns:IBTMISService_DeleteAttachments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/DeleteAttachmentsResponse" message="tns:IBTMISService_DeleteAttachments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProblemReportRowCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetProblemReportRowCount" message="tns:IBTMISService_GetProblemReportRowCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetProblemReportRowCountResponse" message="tns:IBTMISService_GetProblemReportRowCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProblemReports">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetProblemReports" message="tns:IBTMISService_GetProblemReports_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetProblemReportsResponse" message="tns:IBTMISService_GetProblemReports_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/DeleteTask" message="tns:IBTMISService_DeleteTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/DeleteTaskResponse" message="tns:IBTMISService_DeleteTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationRowCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetOperationRowCount" message="tns:IBTMISService_GetOperationRowCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetOperationRowCountResponse" message="tns:IBTMISService_GetOperationRowCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetOperations" message="tns:IBTMISService_GetOperations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetOperationsResponse" message="tns:IBTMISService_GetOperations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationsByPartBaliseNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetOperationsByPartBaliseNo" message="tns:IBTMISService_GetOperationsByPartBaliseNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetOperationsByPartBaliseNoResponse" message="tns:IBTMISService_GetOperationsByPartBaliseNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="modifyOperation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/modifyOperation" message="tns:IBTMISService_modifyOperation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/modifyOperationResponse" message="tns:IBTMISService_modifyOperation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationSummaryRowCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetOperationSummaryRowCount" message="tns:IBTMISService_GetOperationSummaryRowCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetOperationSummaryRowCountResponse" message="tns:IBTMISService_GetOperationSummaryRowCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationSummary">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetOperationSummary" message="tns:IBTMISService_GetOperationSummary_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetOperationSummaryResponse" message="tns:IBTMISService_GetOperationSummary_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOperationToTelegram">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/AddOperationToTelegram" message="tns:IBTMISService_AddOperationToTelegram_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/AddOperationToTelegramResponse" message="tns:IBTMISService_AddOperationToTelegram_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationByGuid">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetOperationByGuid" message="tns:IBTMISService_GetOperationByGuid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetOperationByGuidResponse" message="tns:IBTMISService_GetOperationByGuid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPhotoByOperationGuid">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetPhotoByOperationGuid" message="tns:IBTMISService_GetPhotoByOperationGuid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetPhotoByOperationGuidResponse" message="tns:IBTMISService_GetPhotoByOperationGuid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPhotoImageData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetPhotoImageData" message="tns:IBTMISService_GetPhotoImageData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetPhotoImageDataResponse" message="tns:IBTMISService_GetPhotoImageData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPreviewImageData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetPreviewImageData" message="tns:IBTMISService_GetPreviewImageData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetPreviewImageDataResponse" message="tns:IBTMISService_GetPreviewImageData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLogrecordRowCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetLogrecordRowCount" message="tns:IBTMISService_GetLogrecordRowCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetLogrecordRowCountResponse" message="tns:IBTMISService_GetLogrecordRowCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLogrecords">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetLogrecords" message="tns:IBTMISService_GetLogrecords_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetLogrecordsResponse" message="tns:IBTMISService_GetLogrecords_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLogrecords">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetAllLogrecords" message="tns:IBTMISService_GetAllLogrecords_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetAllLogrecordsResponse" message="tns:IBTMISService_GetAllLogrecords_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetErrorratioRowCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetErrorratioRowCount" message="tns:IBTMISService_GetErrorratioRowCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetErrorratioRowCountResponse" message="tns:IBTMISService_GetErrorratioRowCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetErrorratios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetErrorratios" message="tns:IBTMISService_GetErrorratios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetErrorratiosResponse" message="tns:IBTMISService_GetErrorratios_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTelegramRowCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetTelegramRowCount" message="tns:IBTMISService_GetTelegramRowCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetTelegramRowCountResponse" message="tns:IBTMISService_GetTelegramRowCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTelegrams">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetTelegrams" message="tns:IBTMISService_GetTelegrams_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetTelegramsResponse" message="tns:IBTMISService_GetTelegrams_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTelegram">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/AddTelegram" message="tns:IBTMISService_AddTelegram_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/AddTelegramResponse" message="tns:IBTMISService_AddTelegram_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyTelegram">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/ModifyTelegram" message="tns:IBTMISService_ModifyTelegram_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/ModifyTelegramResponse" message="tns:IBTMISService_ModifyTelegram_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisableTelegram">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/DisableTelegram" message="tns:IBTMISService_DisableTelegram_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/DisableTelegramResponse" message="tns:IBTMISService_DisableTelegram_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsBaliseNoCanUse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/IsBaliseNoCanUse" message="tns:IBTMISService_IsBaliseNoCanUse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/IsBaliseNoCanUseResponse" message="tns:IBTMISService_IsBaliseNoCanUse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsMCountCanUse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/IsMCountCanUse" message="tns:IBTMISService_IsMCountCanUse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/IsMCountCanUseResponse" message="tns:IBTMISService_IsMCountCanUse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTelegramByBaliseNoAndMCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetTelegramByBaliseNoAndMCount" message="tns:IBTMISService_GetTelegramByBaliseNoAndMCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetTelegramByBaliseNoAndMCountResponse" message="tns:IBTMISService_GetTelegramByBaliseNoAndMCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTelegramsByBaliseNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetTelegramsByBaliseNo" message="tns:IBTMISService_GetTelegramsByBaliseNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetTelegramsByBaliseNoResponse" message="tns:IBTMISService_GetTelegramsByBaliseNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTelegramById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetTelegramById" message="tns:IBTMISService_GetTelegramById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetTelegramByIdResponse" message="tns:IBTMISService_GetTelegramById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsTelegramExists">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/IsTelegramExists" message="tns:IBTMISService_IsTelegramExists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/IsTelegramExistsResponse" message="tns:IBTMISService_IsTelegramExists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyUserinfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/ModifyUserinfo" message="tns:IBTMISService_ModifyUserinfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/ModifyUserinfoResponse" message="tns:IBTMISService_ModifyUserinfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserinfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/DeleteUserinfo" message="tns:IBTMISService_DeleteUserinfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/DeleteUserinfoResponse" message="tns:IBTMISService_DeleteUserinfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserinfos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetAllUserinfos" message="tns:IBTMISService_GetAllUserinfos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetAllUserinfosResponse" message="tns:IBTMISService_GetAllUserinfos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsExistSameUserName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/IsExistSameUserName" message="tns:IBTMISService_IsExistSameUserName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/IsExistSameUserNameResponse" message="tns:IBTMISService_IsExistSameUserName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsExistSameUserPhone">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/IsExistSameUserPhone" message="tns:IBTMISService_IsExistSameUserPhone_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/IsExistSameUserPhoneResponse" message="tns:IBTMISService_IsExistSameUserPhone_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsExistSameUserWorkno">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/IsExistSameUserWorkno" message="tns:IBTMISService_IsExistSameUserWorkno_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/IsExistSameUserWorknoResponse" message="tns:IBTMISService_IsExistSameUserWorkno_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/Login" message="tns:IBTMISService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/LoginResponse" message="tns:IBTMISService_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetAction" message="tns:IBTMISService_GetAction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetActionResponse" message="tns:IBTMISService_GetAction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupinfoRowCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetGroupinfoRowCount" message="tns:IBTMISService_GetGroupinfoRowCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetGroupinfoRowCountResponse" message="tns:IBTMISService_GetGroupinfoRowCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupinfos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetGroupinfos" message="tns:IBTMISService_GetGroupinfos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetGroupinfosResponse" message="tns:IBTMISService_GetGroupinfos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddGroupinfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/AddGroupinfo" message="tns:IBTMISService_AddGroupinfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/AddGroupinfoResponse" message="tns:IBTMISService_AddGroupinfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyGroupinfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/ModifyGroupinfo" message="tns:IBTMISService_ModifyGroupinfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/ModifyGroupinfoResponse" message="tns:IBTMISService_ModifyGroupinfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGroupinfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/DeleteGroupinfo" message="tns:IBTMISService_DeleteGroupinfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/DeleteGroupinfoResponse" message="tns:IBTMISService_DeleteGroupinfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllGroupinfos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetAllGroupinfos" message="tns:IBTMISService_GetAllGroupinfos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetAllGroupinfosResponse" message="tns:IBTMISService_GetAllGroupinfos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNonEmptyGroupinfos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetNonEmptyGroupinfos" message="tns:IBTMISService_GetNonEmptyGroupinfos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetNonEmptyGroupinfosResponse" message="tns:IBTMISService_GetNonEmptyGroupinfos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsExistSameGroupNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/IsExistSameGroupNo" message="tns:IBTMISService_IsExistSameGroupNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/IsExistSameGroupNoResponse" message="tns:IBTMISService_IsExistSameGroupNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsExistSameGroupName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/IsExistSameGroupName" message="tns:IBTMISService_IsExistSameGroupName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/IsExistSameGroupNameResponse" message="tns:IBTMISService_IsExistSameGroupName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupUserinfos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetGroupUserinfos" message="tns:IBTMISService_GetGroupUserinfos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetGroupUserinfosResponse" message="tns:IBTMISService_GetGroupUserinfos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOtherUserinfos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetOtherUserinfos" message="tns:IBTMISService_GetOtherUserinfos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetOtherUserinfosResponse" message="tns:IBTMISService_GetOtherUserinfos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGroupMember">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/UpdateGroupMember" message="tns:IBTMISService_UpdateGroupMember_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/UpdateGroupMemberResponse" message="tns:IBTMISService_UpdateGroupMember_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskRowCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetTaskRowCount" message="tns:IBTMISService_GetTaskRowCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetTaskRowCountResponse" message="tns:IBTMISService_GetTaskRowCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTasks">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetTasks" message="tns:IBTMISService_GetTasks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetTasksResponse" message="tns:IBTMISService_GetTasks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/AddTask" message="tns:IBTMISService_AddTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/AddTaskResponse" message="tns:IBTMISService_AddTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTasks">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/AddTasks" message="tns:IBTMISService_AddTasks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/AddTasksResponse" message="tns:IBTMISService_AddTasks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddGroupTasks">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/AddGroupTasks" message="tns:IBTMISService_AddGroupTasks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/AddGroupTasksResponse" message="tns:IBTMISService_AddGroupTasks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTaskWithAttachments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/AddTaskWithAttachments" message="tns:IBTMISService_AddTaskWithAttachments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/AddTaskWithAttachmentsResponse" message="tns:IBTMISService_AddTaskWithAttachments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddGroupTasksWithAttachments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/AddGroupTasksWithAttachments" message="tns:IBTMISService_AddGroupTasksWithAttachments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/AddGroupTasksWithAttachmentsResponse" message="tns:IBTMISService_AddGroupTasksWithAttachments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/ModifyTask" message="tns:IBTMISService_ModifyTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/ModifyTaskResponse" message="tns:IBTMISService_ModifyTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConfigValue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetConfigValue" message="tns:IBTMISService_GetConfigValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetConfigValueResponse" message="tns:IBTMISService_GetConfigValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSystemConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/AddSystemConfig" message="tns:IBTMISService_AddSystemConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/AddSystemConfigResponse" message="tns:IBTMISService_AddSystemConfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifySystemConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/ModifySystemConfig" message="tns:IBTMISService_ModifySystemConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/ModifySystemConfigResponse" message="tns:IBTMISService_ModifySystemConfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSystemConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/DeleteSystemConfig" message="tns:IBTMISService_DeleteSystemConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/DeleteSystemConfigResponse" message="tns:IBTMISService_DeleteSystemConfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLineRowCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetLineRowCount" message="tns:IBTMISService_GetLineRowCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetLineRowCountResponse" message="tns:IBTMISService_GetLineRowCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLines">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetLines" message="tns:IBTMISService_GetLines_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetLinesResponse" message="tns:IBTMISService_GetLines_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddLine">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/AddLine" message="tns:IBTMISService_AddLine_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/AddLineResponse" message="tns:IBTMISService_AddLine_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyLine">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/ModifyLine" message="tns:IBTMISService_ModifyLine_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/ModifyLineResponse" message="tns:IBTMISService_ModifyLine_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLine">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/DeleteLine" message="tns:IBTMISService_DeleteLine_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/DeleteLineResponse" message="tns:IBTMISService_DeleteLine_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsExistSameLineName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/IsExistSameLineName" message="tns:IBTMISService_IsExistSameLineName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/IsExistSameLineNameResponse" message="tns:IBTMISService_IsExistSameLineName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLines">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetAllLines" message="tns:IBTMISService_GetAllLines_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetAllLinesResponse" message="tns:IBTMISService_GetAllLines_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBaliseRowCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetBaliseRowCount" message="tns:IBTMISService_GetBaliseRowCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetBaliseRowCountResponse" message="tns:IBTMISService_GetBaliseRowCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBalises">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetBalises" message="tns:IBTMISService_GetBalises_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetBalisesResponse" message="tns:IBTMISService_GetBalises_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBalise">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/AddBalise" message="tns:IBTMISService_AddBalise_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/AddBaliseResponse" message="tns:IBTMISService_AddBalise_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyBalise">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/ModifyBalise" message="tns:IBTMISService_ModifyBalise_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/ModifyBaliseResponse" message="tns:IBTMISService_ModifyBalise_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBalise">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/DeleteBalise" message="tns:IBTMISService_DeleteBalise_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/DeleteBaliseResponse" message="tns:IBTMISService_DeleteBalise_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsExistSameBaliseNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/IsExistSameBaliseNo" message="tns:IBTMISService_IsExistSameBaliseNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/IsExistSameBaliseNoResponse" message="tns:IBTMISService_IsExistSameBaliseNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBalise">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetAllBalise" message="tns:IBTMISService_GetAllBalise_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetAllBaliseResponse" message="tns:IBTMISService_GetAllBalise_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBaliseById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetBaliseById" message="tns:IBTMISService_GetBaliseById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetBaliseByIdResponse" message="tns:IBTMISService_GetBaliseById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBaliseByNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetBaliseByNo" message="tns:IBTMISService_GetBaliseByNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetBaliseByNoResponse" message="tns:IBTMISService_GetBaliseByNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBaliseByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetBaliseByName" message="tns:IBTMISService_GetBaliseByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetBaliseByNameResponse" message="tns:IBTMISService_GetBaliseByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBaliseWithCADPosition">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetBaliseWithCADPosition" message="tns:IBTMISService_GetBaliseWithCADPosition_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetBaliseWithCADPositionResponse" message="tns:IBTMISService_GetBaliseWithCADPosition_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBaliseWithCADFileId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetBaliseWithCADFileId" message="tns:IBTMISService_GetBaliseWithCADFileId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetBaliseWithCADFileIdResponse" message="tns:IBTMISService_GetBaliseWithCADFileId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsBaliseIncludeTelegram">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/IsBaliseIncludeTelegram" message="tns:IBTMISService_IsBaliseIncludeTelegram_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/IsBaliseIncludeTelegramResponse" message="tns:IBTMISService_IsBaliseIncludeTelegram_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBaliseByPlantAndStation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetBaliseByPlantAndStation" message="tns:IBTMISService_GetBaliseByPlantAndStation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetBaliseByPlantAndStationResponse" message="tns:IBTMISService_GetBaliseByPlantAndStation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserinfoRowCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetUserinfoRowCount" message="tns:IBTMISService_GetUserinfoRowCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetUserinfoRowCountResponse" message="tns:IBTMISService_GetUserinfoRowCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserinfos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetUserinfos" message="tns:IBTMISService_GetUserinfos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetUserinfosResponse" message="tns:IBTMISService_GetUserinfos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUserinfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/AddUserinfo" message="tns:IBTMISService_AddUserinfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/AddUserinfoResponse" message="tns:IBTMISService_AddUserinfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBasic">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetBasic" message="tns:IBTMISService_GetBasic_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetBasicResponse" message="tns:IBTMISService_GetBasic_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBasics">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetAllBasics" message="tns:IBTMISService_GetAllBasics_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetAllBasicsResponse" message="tns:IBTMISService_GetAllBasics_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSectionRowCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetSectionRowCount" message="tns:IBTMISService_GetSectionRowCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetSectionRowCountResponse" message="tns:IBTMISService_GetSectionRowCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSections">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetSections" message="tns:IBTMISService_GetSections_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetSectionsResponse" message="tns:IBTMISService_GetSections_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSection">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/AddSection" message="tns:IBTMISService_AddSection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/AddSectionResponse" message="tns:IBTMISService_AddSection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifySection">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/ModifySection" message="tns:IBTMISService_ModifySection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/ModifySectionResponse" message="tns:IBTMISService_ModifySection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSection">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/DeleteSection" message="tns:IBTMISService_DeleteSection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/DeleteSectionResponse" message="tns:IBTMISService_DeleteSection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSections">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetAllSections" message="tns:IBTMISService_GetAllSections_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetAllSectionsResponse" message="tns:IBTMISService_GetAllSections_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsExistSameSectionName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/IsExistSameSectionName" message="tns:IBTMISService_IsExistSameSectionName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/IsExistSameSectionNameResponse" message="tns:IBTMISService_IsExistSameSectionName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlantRowCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetPlantRowCount" message="tns:IBTMISService_GetPlantRowCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetPlantRowCountResponse" message="tns:IBTMISService_GetPlantRowCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlants">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetPlants" message="tns:IBTMISService_GetPlants_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetPlantsResponse" message="tns:IBTMISService_GetPlants_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPlant">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/AddPlant" message="tns:IBTMISService_AddPlant_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/AddPlantResponse" message="tns:IBTMISService_AddPlant_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyPlant">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/ModifyPlant" message="tns:IBTMISService_ModifyPlant_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/ModifyPlantResponse" message="tns:IBTMISService_ModifyPlant_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePlant">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/DeletePlant" message="tns:IBTMISService_DeletePlant_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/DeletePlantResponse" message="tns:IBTMISService_DeletePlant_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPlants">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetAllPlants" message="tns:IBTMISService_GetAllPlants_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetAllPlantsResponse" message="tns:IBTMISService_GetAllPlants_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsExistSamePlantName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/IsExistSamePlantName" message="tns:IBTMISService_IsExistSamePlantName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/IsExistSamePlantNameResponse" message="tns:IBTMISService_IsExistSamePlantName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStationRowCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetStationRowCount" message="tns:IBTMISService_GetStationRowCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetStationRowCountResponse" message="tns:IBTMISService_GetStationRowCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetStations" message="tns:IBTMISService_GetStations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetStationsResponse" message="tns:IBTMISService_GetStations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddStation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/AddStation" message="tns:IBTMISService_AddStation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/AddStationResponse" message="tns:IBTMISService_AddStation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyStation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/ModifyStation" message="tns:IBTMISService_ModifyStation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/ModifyStationResponse" message="tns:IBTMISService_ModifyStation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteStation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/DeleteStation" message="tns:IBTMISService_DeleteStation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/DeleteStationResponse" message="tns:IBTMISService_DeleteStation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsExistSameStationName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/IsExistSameStationName" message="tns:IBTMISService_IsExistSameStationName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/IsExistSameStationNameResponse" message="tns:IBTMISService_IsExistSameStationName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsExistSameStationNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/IsExistSameStationNo" message="tns:IBTMISService_IsExistSameStationNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/IsExistSameStationNoResponse" message="tns:IBTMISService_IsExistSameStationNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetAllStations" message="tns:IBTMISService_GetAllStations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetAllStationsResponse" message="tns:IBTMISService_GetAllStations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStationByNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetStationByNo" message="tns:IBTMISService_GetStationByNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetStationByNoResponse" message="tns:IBTMISService_GetStationByNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsStationUsing">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/IsStationUsing" message="tns:IBTMISService_IsStationUsing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/IsStationUsingResponse" message="tns:IBTMISService_IsStationUsing_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSystemconfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetAllSystemconfig" message="tns:IBTMISService_GetAllSystemconfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetAllSystemconfigResponse" message="tns:IBTMISService_GetAllSystemconfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadSystemConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/UploadSystemConfig" message="tns:IBTMISService_UploadSystemConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/UploadSystemConfigResponse" message="tns:IBTMISService_UploadSystemConfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDateTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetDateTime" message="tns:IBTMISService_GetDateTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetDateTimeResponse" message="tns:IBTMISService_GetDateTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TryLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/TryLogin" message="tns:IBTMISService_TryLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/TryLoginResponse" message="tns:IBTMISService_TryLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyPhoneNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/VerifyPhoneNo" message="tns:IBTMISService_VerifyPhoneNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/VerifyPhoneNoResponse" message="tns:IBTMISService_VerifyPhoneNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadTaskInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/DownloadTaskInfo" message="tns:IBTMISService_DownloadTaskInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/DownloadTaskInfoResponse" message="tns:IBTMISService_DownloadTaskInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadCompare">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/DownloadCompare" message="tns:IBTMISService_DownloadCompare_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/DownloadCompareResponse" message="tns:IBTMISService_DownloadCompare_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadAllCompare">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/DownloadAllCompare" message="tns:IBTMISService_DownloadAllCompare_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/DownloadAllCompareResponse" message="tns:IBTMISService_DownloadAllCompare_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SignTaskDownload">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/SignTaskDownload" message="tns:IBTMISService_SignTaskDownload_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/SignTaskDownloadResponse" message="tns:IBTMISService_SignTaskDownload_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadCadImageInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/DownloadCadImageInfo" message="tns:IBTMISService_DownloadCadImageInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/DownloadCadImageInfoResponse" message="tns:IBTMISService_DownloadCadImageInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadOperations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/UploadOperations" message="tns:IBTMISService_UploadOperations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/UploadOperationsResponse" message="tns:IBTMISService_UploadOperations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadPhotos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/UploadPhotos" message="tns:IBTMISService_UploadPhotos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/UploadPhotosResponse" message="tns:IBTMISService_UploadPhotos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadTaskProgress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/UploadTaskProgress" message="tns:IBTMISService_UploadTaskProgress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/UploadTaskProgressResponse" message="tns:IBTMISService_UploadTaskProgress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadDateTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/DownloadDateTime" message="tns:IBTMISService_DownloadDateTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/DownloadDateTimeResponse" message="tns:IBTMISService_DownloadDateTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadSystemConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/DownloadSystemConfig" message="tns:IBTMISService_DownloadSystemConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/DownloadSystemConfigResponse" message="tns:IBTMISService_DownloadSystemConfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadErrorratios">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/UploadErrorratios" message="tns:IBTMISService_UploadErrorratios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/UploadErrorratiosResponse" message="tns:IBTMISService_UploadErrorratios_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadLogrecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/UploadLogrecord" message="tns:IBTMISService_UploadLogrecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/UploadLogrecordResponse" message="tns:IBTMISService_UploadLogrecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AppendPhotoFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/AppendPhotoFile" message="tns:IBTMISService_AppendPhotoFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/AppendPhotoFileResponse" message="tns:IBTMISService_AppendPhotoFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NewPhotoFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/NewPhotoFile" message="tns:IBTMISService_NewPhotoFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/NewPhotoFileResponse" message="tns:IBTMISService_NewPhotoFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadCadImage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/DownloadCadImage" message="tns:IBTMISService_DownloadCadImage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/DownloadCadImageResponse" message="tns:IBTMISService_DownloadCadImage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadAttachment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/DownloadAttachment" message="tns:IBTMISService_DownloadAttachment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/DownloadAttachmentResponse" message="tns:IBTMISService_DownloadAttachment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadAttachmentInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/DownloadAttachmentInfo" message="tns:IBTMISService_DownloadAttachmentInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/DownloadAttachmentInfoResponse" message="tns:IBTMISService_DownloadAttachmentInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadProblems">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/UploadProblems" message="tns:IBTMISService_UploadProblems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/UploadProblemsResponse" message="tns:IBTMISService_UploadProblems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBasics">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/AddBasics" message="tns:IBTMISService_AddBasics_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/AddBasicsResponse" message="tns:IBTMISService_AddBasics_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBackBasics">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/AddBackBasics" message="tns:IBTMISService_AddBackBasics_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/AddBackBasicsResponse" message="tns:IBTMISService_AddBackBasics_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsExistBasicsName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/IsExistBasicsName" message="tns:IBTMISService_IsExistBasicsName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/IsExistBasicsNameResponse" message="tns:IBTMISService_IsExistBasicsName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBasicsRowCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetBasicsRowCount" message="tns:IBTMISService_GetBasicsRowCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetBasicsRowCountResponse" message="tns:IBTMISService_GetBasicsRowCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBasics">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/GetBasics" message="tns:IBTMISService_GetBasics_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/GetBasicsResponse" message="tns:IBTMISService_GetBasics_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyBasics">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/ModifyBasics" message="tns:IBTMISService_ModifyBasics_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/ModifyBasicsResponse" message="tns:IBTMISService_ModifyBasics_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBasics">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBTMISService/DeleteBasics" message="tns:IBTMISService_DeleteBasics_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBTMISService/DeleteBasicsResponse" message="tns:IBTMISService_DeleteBasics_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IBTMISService" type="tns:IBTMISService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IBTMISService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ModifyProblemReport">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/ModifyProblemReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCadfileById">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetCadfileById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCadItems">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetAllCadItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCadBalisePositionByFile">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetAllCadBalisePositionByFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompareTelegram">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetCompareTelegram" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTelegrams">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetAllTelegrams" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCadPositionRowCount">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetCadPositionRowCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCadPositions">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetCadPositions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCadPosition">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/AddCadPosition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyPosition">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/ModifyPosition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePosition">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/DeletePosition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCADFileIdByLineId">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetCADFileIdByLineId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCADFileIdByStationId">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetCADFileIdByStationId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsExistCADLineId">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/IsExistCADLineId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsExistCADStationId">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/IsExistCADStationId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsCADFileCanDelete">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/IsCADFileCanDelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCadimage">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/AddCadimage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyCadimage">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/ModifyCadimage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCadBalisePosByBaliseName">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetCadBalisePosByBaliseName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCadBalisePos">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/AddCadBalisePos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyCadBalisePos">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/ModifyCadBalisePos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyCadfileDefaultScale">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/ModifyCadfileDefaultScale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTelegramByBaliseId">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetTelegramByBaliseId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportCompare">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/ExportCompare" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportTelegrams">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/ImportTelegrams" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportTelegramsFailedBack">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/ImportTelegramsFailedBack" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAttachment">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/AddAttachment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachments">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetAttachments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAttachment">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/DeleteAttachment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAttachments">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/DeleteAttachments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProblemReportRowCount">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetProblemReportRowCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProblemReports">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetProblemReports" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTask">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/DeleteTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationRowCount">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetOperationRowCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperations">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetOperations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationsByPartBaliseNo">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetOperationsByPartBaliseNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modifyOperation">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/modifyOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationSummaryRowCount">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetOperationSummaryRowCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationSummary">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetOperationSummary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOperationToTelegram">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/AddOperationToTelegram" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationByGuid">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetOperationByGuid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPhotoByOperationGuid">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetPhotoByOperationGuid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPhotoImageData">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetPhotoImageData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPreviewImageData">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetPreviewImageData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLogrecordRowCount">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetLogrecordRowCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLogrecords">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetLogrecords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLogrecords">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetAllLogrecords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetErrorratioRowCount">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetErrorratioRowCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetErrorratios">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetErrorratios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTelegramRowCount">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetTelegramRowCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTelegrams">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetTelegrams" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTelegram">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/AddTelegram" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyTelegram">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/ModifyTelegram" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableTelegram">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/DisableTelegram" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsBaliseNoCanUse">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/IsBaliseNoCanUse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsMCountCanUse">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/IsMCountCanUse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTelegramByBaliseNoAndMCount">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetTelegramByBaliseNoAndMCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTelegramsByBaliseNo">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetTelegramsByBaliseNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTelegramById">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetTelegramById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsTelegramExists">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/IsTelegramExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyUserinfo">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/ModifyUserinfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserinfo">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/DeleteUserinfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserinfos">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetAllUserinfos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsExistSameUserName">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/IsExistSameUserName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsExistSameUserPhone">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/IsExistSameUserPhone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsExistSameUserWorkno">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/IsExistSameUserWorkno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAction">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetAction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupinfoRowCount">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetGroupinfoRowCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupinfos">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetGroupinfos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGroupinfo">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/AddGroupinfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyGroupinfo">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/ModifyGroupinfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGroupinfo">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/DeleteGroupinfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllGroupinfos">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetAllGroupinfos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNonEmptyGroupinfos">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetNonEmptyGroupinfos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsExistSameGroupNo">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/IsExistSameGroupNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsExistSameGroupName">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/IsExistSameGroupName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupUserinfos">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetGroupUserinfos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOtherUserinfos">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetOtherUserinfos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGroupMember">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/UpdateGroupMember" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskRowCount">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetTaskRowCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTasks">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetTasks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTask">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/AddTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTasks">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/AddTasks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGroupTasks">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/AddGroupTasks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTaskWithAttachments">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/AddTaskWithAttachments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGroupTasksWithAttachments">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/AddGroupTasksWithAttachments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyTask">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/ModifyTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConfigValue">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetConfigValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSystemConfig">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/AddSystemConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifySystemConfig">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/ModifySystemConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSystemConfig">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/DeleteSystemConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLineRowCount">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetLineRowCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLines">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetLines" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLine">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/AddLine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyLine">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/ModifyLine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLine">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/DeleteLine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsExistSameLineName">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/IsExistSameLineName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLines">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetAllLines" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBaliseRowCount">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetBaliseRowCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBalises">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetBalises" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBalise">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/AddBalise" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyBalise">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/ModifyBalise" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBalise">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/DeleteBalise" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsExistSameBaliseNo">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/IsExistSameBaliseNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBalise">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetAllBalise" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBaliseById">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetBaliseById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBaliseByNo">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetBaliseByNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBaliseByName">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetBaliseByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBaliseWithCADPosition">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetBaliseWithCADPosition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBaliseWithCADFileId">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetBaliseWithCADFileId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsBaliseIncludeTelegram">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/IsBaliseIncludeTelegram" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBaliseByPlantAndStation">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetBaliseByPlantAndStation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserinfoRowCount">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetUserinfoRowCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserinfos">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetUserinfos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserinfo">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/AddUserinfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBasic">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetBasic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBasics">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetAllBasics" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSectionRowCount">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetSectionRowCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSections">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetSections" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSection">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/AddSection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifySection">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/ModifySection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSection">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/DeleteSection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSections">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetAllSections" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsExistSameSectionName">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/IsExistSameSectionName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlantRowCount">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetPlantRowCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlants">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetPlants" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPlant">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/AddPlant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyPlant">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/ModifyPlant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePlant">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/DeletePlant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPlants">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetAllPlants" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsExistSamePlantName">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/IsExistSamePlantName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStationRowCount">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetStationRowCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStations">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetStations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddStation">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/AddStation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyStation">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/ModifyStation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteStation">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/DeleteStation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsExistSameStationName">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/IsExistSameStationName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsExistSameStationNo">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/IsExistSameStationNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStations">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetAllStations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStationByNo">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetStationByNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsStationUsing">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/IsStationUsing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSystemconfig">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetAllSystemconfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadSystemConfig">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/UploadSystemConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDateTime">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetDateTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TryLogin">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/TryLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyPhoneNo">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/VerifyPhoneNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadTaskInfo">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/DownloadTaskInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadCompare">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/DownloadCompare" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadAllCompare">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/DownloadAllCompare" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SignTaskDownload">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/SignTaskDownload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadCadImageInfo">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/DownloadCadImageInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadOperations">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/UploadOperations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadPhotos">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/UploadPhotos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadTaskProgress">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/UploadTaskProgress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadDateTime">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/DownloadDateTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadSystemConfig">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/DownloadSystemConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadErrorratios">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/UploadErrorratios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadLogrecord">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/UploadLogrecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AppendPhotoFile">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/AppendPhotoFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewPhotoFile">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/NewPhotoFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadCadImage">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/DownloadCadImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadAttachment">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/DownloadAttachment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadAttachmentInfo">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/DownloadAttachmentInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadProblems">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/UploadProblems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBasics">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/AddBasics" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBackBasics">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/AddBackBasics" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsExistBasicsName">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/IsExistBasicsName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBasicsRowCount">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetBasicsRowCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBasics">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/GetBasics" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyBasics">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/ModifyBasics" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBasics">
+      <soap:operation soapAction="http://tempuri.org/IBTMISService/DeleteBasics" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BTMISService">
+    <wsdl:port name="BasicHttpBinding_IBTMISService" binding="tns:BasicHttpBinding_IBTMISService">
+      <soap:address location="https://192.168.2.113/BTMISService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

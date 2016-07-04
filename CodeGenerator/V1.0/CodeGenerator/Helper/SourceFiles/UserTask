@@ -1,0 +1,11 @@
+CREATE TABLE [dbo].[UserTask]
+(
+	[Id] NVARCHAR(50) NOT NULL PRIMARY KEY, 
+    [Name] NVARCHAR(50) NOT NULL, 
+    [MetricField] INT NOT NULL, 
+    [TargetValue] INT NOT NULL, 
+    [Type] INT NOT NULL, 
+    [AccountId] NVARCHAR(50) NULL, 
+    [CurrentValue] INT NULL, 
+    [ProcessStatus] INT NULL
+)

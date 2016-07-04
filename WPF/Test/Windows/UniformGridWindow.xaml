@@ -1,0 +1,26 @@
+﻿<Window x:Class="WpfApplication2.UniformGridWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="UniformGridWindow" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60px"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="100*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="60px"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="100*"/>
+        </Grid.ColumnDefinitions>
+        <!--HorizontalAlignment="Left" VerticalAlignment="Top" 控件定位后则需要长宽-->
+        <Button Content="Button" Name="button1" Grid.Column="0" Grid.Row="0"/>
+        <Button Content="Button" Height="60" HorizontalAlignment="Left" Margin="15,0,0,0" Name="button2" VerticalAlignment="Top" Width="60" Grid.Column="1" />
+        <Button Content="Button" Height="60" HorizontalAlignment="Left" Margin="0,17,0,0" Name="button3" VerticalAlignment="Top" Width="60" Grid.Row="1" />
+        <Button Content="Button" Height="60" HorizontalAlignment="Left" Margin="15,17,0,0" Name="button4" VerticalAlignment="Top" Width="60" Grid.Column="1" Grid.Row="1" />
+        <TextBox Grid.Column="0" Grid.Row="2" Background="LightBlue"></TextBox>
+        
+        <GridSplitter Width="3" HorizontalAlignment="Left" VerticalAlignment="Stretch" Grid.Row="0" Grid.RowSpan="3" Grid.Column="1" ></GridSplitter>
+        <GridSplitter Height="3" VerticalAlignment="Top" HorizontalAlignment="Stretch" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"></GridSplitter>
+    </Grid>
+</Window>

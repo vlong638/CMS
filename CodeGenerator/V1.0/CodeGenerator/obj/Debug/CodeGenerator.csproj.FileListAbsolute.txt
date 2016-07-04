@@ -1,0 +1,15 @@
+D:\WorkSpace\Projects\MyCMS\FIATTester\CodeGenerator\bin\Debug\CodeGenerator.dll
+D:\WorkSpace\Projects\MyCMS\FIATTester\CodeGenerator\bin\Debug\CodeGenerator.pdb
+D:\WorkSpace\Projects\MyCMS\FIATTester\CodeGenerator\bin\Debug\Oracle.DataAccess_992.dll
+D:\WorkSpace\Projects\MyCMS\FIATTester\CodeGenerator\obj\Debug\CodeGenerator.dll
+D:\WorkSpace\Projects\MyCMS\FIATTester\CodeGenerator\obj\Debug\CodeGenerator.pdb
+D:\WorkSpace\Projects\MyCMS\FIATTester\CodeGenerator\obj\Debug\CodeGenerator.csprojResolveAssemblyReference.cache
+D:\WorkSpace\Projects\MyCMS\FIATTester\CodeGenerator\bin\Debug\Common.dll
+D:\WorkSpace\Projects\MyCMS\FIATTester\CodeGenerator\bin\Debug\Common.pdb
+E:\WorkSpace\0.公用经验\MyCode\VL\CodeGenerator\V1.0\CodeGenerator\obj\Debug\CodeGenerator.csprojResolveAssemblyReference.cache
+E:\WorkSpace\0.公用经验\MyCode\VL\CodeGenerator\V1.0\CodeGenerator\obj\Debug\CodeGenerator.dll
+E:\WorkSpace\0.公用经验\MyCode\VL\CodeGenerator\V1.0\CodeGenerator\obj\Debug\CodeGenerator.pdb
+E:\WorkSpace\0.公用经验\MyCode\VL\CodeGenerator\V1.0\CodeGenerator\bin\Debug\CodeGenerator.dll
+E:\WorkSpace\0.公用经验\MyCode\VL\CodeGenerator\V1.0\CodeGenerator\bin\Debug\CodeGenerator.pdb
+E:\WorkSpace\0.公用经验\MyCode\VL\CodeGenerator\V1.0\CodeGenerator\bin\Debug\VLCommon.dll
+E:\WorkSpace\0.公用经验\MyCode\VL\CodeGenerator\V1.0\CodeGenerator\bin\Debug\VLCommon.pdb

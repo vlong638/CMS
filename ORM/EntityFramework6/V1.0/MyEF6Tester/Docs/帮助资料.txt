@@ -1,0 +1,2 @@
+﻿http://download.oracle.com/oll/obe/EntityFrameworkOBE/EntityFrameworkOBE.htm
+http://www.cnblogs.com/rohelm/p/3961767.html

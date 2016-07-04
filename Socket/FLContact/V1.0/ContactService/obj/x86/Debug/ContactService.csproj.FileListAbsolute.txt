@@ -1,0 +1,2 @@
+E:\0.公用经验\代码库\VL\Socket\FLContact\V1.0\ContactService\bin\Debug\ContactService.exe.config
+E:\WorkSpace\0.公用经验\MyCode\VL\Socket\FLContact\V1.0\ContactService\bin\Debug\ContactService.exe.config

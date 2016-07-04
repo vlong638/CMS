@@ -1,0 +1,5 @@
+D:\WorkSpace\Projects\MyCMS\FIATTester\Common\bin\Debug\Common.dll
+D:\WorkSpace\Projects\MyCMS\FIATTester\Common\bin\Debug\Common.pdb
+D:\WorkSpace\Projects\MyCMS\FIATTester\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+D:\WorkSpace\Projects\MyCMS\FIATTester\Common\obj\Debug\Common.dll
+D:\WorkSpace\Projects\MyCMS\FIATTester\Common\obj\Debug\Common.pdb

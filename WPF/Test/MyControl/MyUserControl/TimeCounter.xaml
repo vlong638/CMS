@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="WpfApplication2.MyControl.MyUserControl.TimeCounter"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Name="timeCounter"
+             d:DesignHeight="60" d:DesignWidth="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30*"></RowDefinition>
+            <RowDefinition Height="30*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="180"></ColumnDefinition>
+            <ColumnDefinition Width="120*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Button Name="btStartTime" Grid.Row="0" Grid.Column="0" Content="设置初始时间" Command="{Binding UpdateStartTime}" CommandTarget="{Binding ElementName=timeCounter}"/>
+        <Label Name="lblStartTime" Grid.Row="0" Grid.Column="1" Content="{Binding ElementName=timeCounter,Path=StartTime, StringFormat={}{0:yyyy-MM-dd}}"/>
+        <Slider Name="sldDuration" Grid.Row="1" Grid.Column="0" Minimum="0" Maximum="1440" Value="{Binding ElementName=timeCounter,Path=Duration}"></Slider>
+        <Label Name="lblEndTime" Grid.Row="1" Grid.Column="1" Content="{Binding ElementName=timeCounter,Path=EndTime}"/>
+    </Grid>
+</UserControl>

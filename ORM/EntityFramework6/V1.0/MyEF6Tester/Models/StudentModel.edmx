@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model.Store" Alias="Self" Provider="Oracle.DataAccess.Client" ProviderManifestToken="11.2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="TB_STUDENT" EntityType="Model.Store.TB_STUDENT" store:Type="Tables" store:Schema="VLONG638" store:Name="TB_STUDENT">
+            <DefiningQuery>SELECT 
+      "TB_STUDENT"."URID" AS "URID", 
+      "TB_STUDENT"."NAME" AS "NAME", 
+      "TB_STUDENT"."AGE" AS "AGE", 
+      "TB_STUDENT"."REMARK1" AS "REMARK1", 
+      "TB_STUDENT"."REMARK2" AS "REMARK2"
+      FROM "VLONG638"."TB_STUDENT" "TB_STUDENT"</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“VLONG638.TB_STUDENT”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="TB_STUDENT">
+          <Key>
+            <PropertyRef Name="URID" />
+          </Key>
+          <Property Name="URID" Nullable="false" Type="number" />
+          <Property Name="NAME" MaxLength="20" Type="nvarchar2" />
+          <Property Name="AGE" Type="number" />
+          <Property Name="REMARK1" MaxLength="100" Type="nvarchar2" />
+          <Property Name="REMARK2" MaxLength="100" Type="nvarchar2" />
+        </EntityType>
+        <Function Name="OUTPARAM" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="VLONG638">
+          <Parameter Name="OUTP" Type="varchar2" Mode="Out" />
+        </Function>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="EntityContext" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="TB_STUDENT" EntityType="Model.TB_STUDENT" />
+          <FunctionImport Name="OUTPARAM">
+            <Parameter Name="OUTP" Mode="Out" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="TB_STUDENT">
+          <Key>
+            <PropertyRef Name="URID" />
+          </Key>
+          <Property Name="URID" Nullable="false" Precision="38" Scale="0" Type="Decimal" />
+          <Property Name="NAME" MaxLength="20" FixedLength="false" Unicode="true" Type="String" />
+          <Property Name="AGE" Precision="38" Scale="0" Type="Decimal" />
+          <Property Name="REMARK1" MaxLength="100" FixedLength="false" Unicode="true" Type="String" />
+          <Property Name="REMARK2" MaxLength="100" FixedLength="false" Unicode="true" Type="String" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="EntityContext">
+          <EntitySetMapping Name="TB_STUDENT">
+            <EntityTypeMapping TypeName="Model.TB_STUDENT">
+              <MappingFragment StoreEntitySet="TB_STUDENT">
+                <ScalarProperty Name="URID" ColumnName="URID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="AGE" ColumnName="AGE" />
+                <ScalarProperty Name="REMARK1" ColumnName="REMARK1" />
+                <ScalarProperty Name="REMARK2" ColumnName="REMARK2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="OUTPARAM" FunctionName="Model.Store.OUTPARAM" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

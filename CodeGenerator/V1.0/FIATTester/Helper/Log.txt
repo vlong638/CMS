@@ -1,0 +1,14 @@
+System.ArgumentException: 未找到请求的值“FLOAT”。
+   在 System.Enum.TryParseEnum(Type enumType, String value, Boolean ignoreCase, EnumResult& parseResult)
+   在 System.Enum.Parse(Type enumType, String value)
+   在 FIATTester.Helper.DDL.DDLEntityItem..ctor(Match match) 位置 d:\WorkSpace\Projects\MyCMS\FIATTester\CodeGenerator\DDL\DDLEntityItem.cs:行号 189
+   在 FIATTester.Helper.DDL.DDLEntity..ctor(StreamReader sr) 位置 d:\WorkSpace\Projects\MyCMS\FIATTester\CodeGenerator\DDL\DDLEntity.cs:行号 111
+   在 FIATTester.Helper.DDL.DDLEntityParser.ParseFile(String sourceFile) 位置 d:\WorkSpace\Projects\MyCMS\FIATTester\CodeGenerator\DDL\DDLEntityParser.cs:行号 94
+   在 FIATTester.Helper.DDL.DDLEntityParser.ConvertDirectory(String sourcePath, String targetEntityPath, String targetDALPath, String targetBLLPath, String dealedPath, String failedPath, String targetEntityNamespace, String targetDALNamespace, String targetBLLNamespace) 位置 d:\WorkSpace\Projects\MyCMS\FIATTester\CodeGenerator\DDL\DDLEntityParser.cs:行号 35
+System.ArgumentException: 未找到请求的值“FLOAT”。
+   在 System.Enum.TryParseEnum(Type enumType, String value, Boolean ignoreCase, EnumResult& parseResult)
+   在 System.Enum.Parse(Type enumType, String value)
+   在 FIATTester.Helper.DDL.DDLEntityItem..ctor(Match match) 位置 d:\WorkSpace\Projects\MyCMS\FIATTester\CodeGenerator\DDL\DDLEntityItem.cs:行号 189
+   在 FIATTester.Helper.DDL.DDLEntity..ctor(StreamReader sr) 位置 d:\WorkSpace\Projects\MyCMS\FIATTester\CodeGenerator\DDL\DDLEntity.cs:行号 111
+   在 FIATTester.Helper.DDL.DDLEntityParser.ParseFile(String sourceFile) 位置 d:\WorkSpace\Projects\MyCMS\FIATTester\CodeGenerator\DDL\DDLEntityParser.cs:行号 94
+   在 FIATTester.Helper.DDL.DDLEntityParser.ConvertDirectory(String sourcePath, String targetEntityPath, String targetDALPath, String targetBLLPath, String dealedPath, String failedPath, String targetEntityNamespace, String targetDALNamespace, String targetBLLNamespace) 位置 d:\WorkSpace\Projects\MyCMS\FIATTester\CodeGenerator\DDL\DDLEntityParser.cs:行号 35

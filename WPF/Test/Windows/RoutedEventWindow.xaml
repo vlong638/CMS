@@ -1,0 +1,20 @@
+﻿<Window x:Class="WpfApplication2.Windows.RoutedEventWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="RoutedEventWindow" Height="230" Width="300">
+    <StackPanel>
+        <StackPanel Background="LightBlue" x:Name="spB" Margin="10px">
+            <Button x:Name="btnB1" Content="btnB1" Click="btnB_Click"></Button>
+            <Button x:Name="btnB2" Content="btnB2" Click="btnB_Click"></Button>
+        </StackPanel>
+        <StackPanel Background="LightGreen" x:Name="spG" Margin="10px" ButtonBase.Click="spG_Click">
+            <Button x:Name="btnG1" Content="btnG1"></Button>
+            <Button x:Name="btnG2" Content="btnG2"></Button>
+        </StackPanel>
+        <StackPanel Background="LightCyan" x:Name="spC" Margin="10px" ButtonBase.Click="spC_Click">
+            <Button x:Name="btnC1" Click="btnC1_Click" Content="btnC1"></Button>
+            <Button x:Name="btnC2" Click="btnC2_Click" Content="btnC2"></Button>
+        </StackPanel>
+        
+    </StackPanel>
+</Window>

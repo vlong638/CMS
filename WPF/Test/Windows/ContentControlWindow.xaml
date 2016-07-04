@@ -1,0 +1,63 @@
+﻿<Window x:Class="WpfApplication2.ContentControlWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ContentControlWindow" Height="300" Width="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        
+        <TextBlock Text="ContentControl" Grid.Row="0" Grid.Column="0"/>
+        <Button Margin="5,20,5,5" Grid.Row="0" Grid.Column="0" >
+            <Button.Content>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock Text="Content" HorizontalAlignment="Center" />
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        
+        <TextBlock Text="HeaderedContentControl" Grid.Row="0" Grid.Column="1"/>
+        <GroupBox Margin="5,20,5,5" Grid.Row="0" Grid.Column="1">
+            <GroupBox.Header>
+                <TextBlock Text="Header Text" />
+            </GroupBox.Header>
+            <GroupBox.Content>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock Text="Content Text" HorizontalAlignment="Center" />
+                </StackPanel>
+            </GroupBox.Content>
+        </GroupBox>
+
+        <TextBlock Text="ItemsControl" Grid.Row="1" Grid.Column="0"/>
+        <ListBox Margin="5,20,5,5" Grid.Row="1" Grid.Column="0" >
+            <ListBox.Items>
+                <TextBlock Text="List Item A" />
+                <Button Content="List Item B" />
+                <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                    <TextBlock Text="List Item C" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </StackPanel>
+            </ListBox.Items>
+        </ListBox>
+
+        <TextBlock Text="HeaderedItemsControl" Grid.Row="2" Grid.Column="2"/>
+        <TreeView Margin="5,20,5,5" Grid.Row="2" Grid.Column="2" >
+            <TreeViewItem>
+                <TreeViewItem.Header>
+                    Tree Node A
+                </TreeViewItem.Header>
+                <TreeViewItem.Items>
+                    <TextBlock Text="Node A - 1 " />
+                    <Button Content="Node A - 2 " />
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <TextBlock Text="DVD" HorizontalAlignment="Center" />
+                    </StackPanel>
+                </TreeViewItem.Items>
+            </TreeViewItem>
+        </TreeView>
+    </Grid>
+</Window>

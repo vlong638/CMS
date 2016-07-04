@@ -1,0 +1,25 @@
+c:\users\administrator\documents\visual studio 2012\Projects\FIATTester\FIATTester\bin\Debug\FIATTester.exe.config
+D:\WorkSpace\Projects\MyCMS\FIATTester\FIATTester\bin\Debug\FIATTester.exe.config
+D:\WorkSpace\Projects\MyCMS\FIATTester\FIATTester\bin\Debug\FIATTester.exe
+D:\WorkSpace\Projects\MyCMS\FIATTester\FIATTester\bin\Debug\FIATTester.pdb
+D:\WorkSpace\Projects\MyCMS\FIATTester\FIATTester\bin\Debug\ServiceClientHelper.dll
+D:\WorkSpace\Projects\MyCMS\FIATTester\FIATTester\bin\Debug\ServiceClientHelper.pdb
+D:\WorkSpace\Projects\MyCMS\FIATTester\FIATTester\obj\Debug\FIATTester.csprojResolveAssemblyReference.cache
+D:\WorkSpace\Projects\MyCMS\FIATTester\FIATTester\obj\Debug\FIATTester.exe
+D:\WorkSpace\Projects\MyCMS\FIATTester\FIATTester\obj\Debug\FIATTester.pdb
+D:\WorkSpace\Projects\MyCMS\FIATTester\FIATTester\bin\Debug\CodeGenerator.dll
+D:\WorkSpace\Projects\MyCMS\FIATTester\FIATTester\bin\Debug\CodeGenerator.pdb
+D:\WorkSpace\Projects\MyCMS\FIATTester\FIATTester\bin\Debug\Common.dll
+D:\WorkSpace\Projects\MyCMS\FIATTester\FIATTester\bin\Debug\Common.pdb
+E:\WorkSpace\0.公用经验\MyCode\VL\CodeGenerator\V1.0\FIATTester\bin\Debug\FIATTester.exe.config
+E:\WorkSpace\0.公用经验\MyCode\VL\CodeGenerator\V1.0\FIATTester\obj\Debug\FIATTester.exe
+E:\WorkSpace\0.公用经验\MyCode\VL\CodeGenerator\V1.0\FIATTester\obj\Debug\FIATTester.pdb
+E:\WorkSpace\0.公用经验\MyCode\VL\CodeGenerator\V1.0\FIATTester\obj\Debug\FIATTester.csprojResolveAssemblyReference.cache
+E:\WorkSpace\0.公用经验\MyCode\VL\CodeGenerator\V1.0\FIATTester\bin\Debug\FIATTester.exe
+E:\WorkSpace\0.公用经验\MyCode\VL\CodeGenerator\V1.0\FIATTester\bin\Debug\FIATTester.pdb
+E:\WorkSpace\0.公用经验\MyCode\VL\CodeGenerator\V1.0\FIATTester\bin\Debug\CodeGenerator.dll
+E:\WorkSpace\0.公用经验\MyCode\VL\CodeGenerator\V1.0\FIATTester\bin\Debug\ServiceClientHelper.dll
+E:\WorkSpace\0.公用经验\MyCode\VL\CodeGenerator\V1.0\FIATTester\bin\Debug\VLCommon.dll
+E:\WorkSpace\0.公用经验\MyCode\VL\CodeGenerator\V1.0\FIATTester\bin\Debug\CodeGenerator.pdb
+E:\WorkSpace\0.公用经验\MyCode\VL\CodeGenerator\V1.0\FIATTester\bin\Debug\VLCommon.pdb
+E:\WorkSpace\0.公用经验\MyCode\VL\CodeGenerator\V1.0\FIATTester\bin\Debug\ServiceClientHelper.pdb

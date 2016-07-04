@@ -1,0 +1,32 @@
+﻿<Window x:Class="WpfApplication2.Windows.CommandWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="CommandWindow" Height="300" Width="300">
+    <Window.InputBindings>
+        <KeyBinding Command="ApplicationCommands.Save" Key="F3" Modifiers="Control" />
+    </Window.InputBindings>
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Save" CanExecute="CommandBinding_Save_CanExecute" Executed="CommandBinding_Save_Executed" />
+    </Window.CommandBindings>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80*" />
+            <RowDefinition Height="60*" />
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0" Grid.Column="0">
+            <MenuItem Header="Edit">
+                <MenuItem x:Name="menuCopy" Header="Copy" Command="ApplicationCommands.Copy" />
+                <MenuItem x:Name="menuPaste" Header="Paste" Command="ApplicationCommands.Paste" />
+                <MenuItem x:Name="menuCut" Header="Cut" Command="ApplicationCommands.Cut" />
+            </MenuItem>
+            <MenuItem Header="File">
+                <MenuItem x:Name="menuSave" Header="Save" Command="ApplicationCommands.Save" />
+            </MenuItem>
+            <Button Command="ApplicationCommands.Copy" />
+            <KeyBinding Command="ApplicationCommands.Paste" Key="F2" Modifiers="Control" />
+        </Menu>
+        <TextBox Grid.Row="1" Grid.Column="0" x:Name="mainText" TextWrapping="Wrap" AcceptsReturn="True" />
+        
+    </Grid>
+</Window>

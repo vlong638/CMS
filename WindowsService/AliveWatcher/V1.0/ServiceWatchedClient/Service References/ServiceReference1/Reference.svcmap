@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7f63ac00-741b-424e-af08-af6d057dd723" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://192.168.2.113/BTMISService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="BTMISService.xsd" MetadataType="Schema" ID="12a0526c-89b9-4b1b-80bb-5310ae54715d" SourceId="1" SourceUrl="https://192.168.2.113/BTMISService.svc?xsd=xsd5" />
+    <MetadataFile FileName="BTMISService.disco" MetadataType="Disco" ID="d655fc1b-0caa-4710-9438-b0ffd80d32bc" SourceId="1" SourceUrl="https://192.168.2.113/BTMISService.svc?disco" />
+    <MetadataFile FileName="BTMISService1.xsd" MetadataType="Schema" ID="25113fed-6c1f-4a8f-8ccc-a5a819881f22" SourceId="1" SourceUrl="https://192.168.2.113/BTMISService.svc?xsd=xsd4" />
+    <MetadataFile FileName="BTMISService2.xsd" MetadataType="Schema" ID="eedc6896-d7b3-4a91-bb60-b68a8708db3d" SourceId="1" SourceUrl="https://192.168.2.113/BTMISService.svc?xsd=xsd2" />
+    <MetadataFile FileName="BTMISService.wsdl" MetadataType="Wsdl" ID="24316be0-2800-4e9d-9a0b-256dd0a2b39c" SourceId="1" SourceUrl="https://192.168.2.113/BTMISService.svc?wsdl" />
+    <MetadataFile FileName="BTMISService3.xsd" MetadataType="Schema" ID="2363512f-dc28-450b-a1a9-a312628a9fb1" SourceId="1" SourceUrl="https://192.168.2.113/BTMISService.svc?xsd=xsd3" />
+    <MetadataFile FileName="BTMISService4.xsd" MetadataType="Schema" ID="c1c853e0-8c06-4ed3-9094-13429d523be1" SourceId="1" SourceUrl="https://192.168.2.113/BTMISService.svc?xsd=xsd1" />
+    <MetadataFile FileName="BTMISService5.xsd" MetadataType="Schema" ID="63d66db2-f6a6-4989-a8f5-2aef42ab297f" SourceId="1" SourceUrl="https://192.168.2.113/BTMISService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

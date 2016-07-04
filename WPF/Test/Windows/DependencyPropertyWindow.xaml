@@ -1,0 +1,27 @@
+﻿<Window x:Class="WpfApplication2.DependencyPropertyWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:WpfApplication2.Helper"
+        Title="DependencyPropertyWindow" Height="300" Width="300">
+    <Window.DataContext>
+        <local:MyDependencyObject x:Name="myDependencyObject"/>
+    </Window.DataContext>
+    <Grid>
+        <!--WPF将XAML属性的简单字符串的类型转换成WPF类型-->
+        <Button Content="Button" Height="23" HorizontalAlignment="Left" Margin="12,12,0,0" Name="btn_1" Background="Yellow" VerticalAlignment="Top" Width="75" />
+        <!--嵌套元素的方式-->
+        <Button Content="Button" Height="23" HorizontalAlignment="Left" Margin="12,41,0,0" Name="btn_2" VerticalAlignment="Top" Width="75" >
+            <Button.Background>
+                <SolidColorBrush Color="Gold" />
+            </Button.Background>
+        </Button>
+        <!--代码相关-->
+        <Button Content="Button" Height="23" HorizontalAlignment="Left" Margin="12,70,0,0" Name="btn_3" VerticalAlignment="Top" Width="75" />
+        <Button Content="Button" Height="23" HorizontalAlignment="Left" Margin="12,99,0,0" Name="btn_4" VerticalAlignment="Top" Width="75" />
+        <Label Content="lbl_01" Height="28" HorizontalAlignment="Left" Margin="12,128,0,0" Name="lbl_01" VerticalAlignment="Top" Width="75" />
+        <Label Content="lbl_02" Height="28" HorizontalAlignment="Left" Margin="12,152,0,0" Name="lbl_02" VerticalAlignment="Top" Width="75" />
+        <!--dependency object-->
+        <Slider Height="23" Minimum="0" Maximum="100" HorizontalAlignment="Left" Margin="12,186,0,0" Name="sliderDependency" VerticalAlignment="Top" Width="100" Value="{Binding FunctionedCount}"/>
+        <Label Height="26" Margin="118,186,0,50" Name="lblProperyText" Content="{Binding PropertyText}"/>
+    </Grid>
+</Window>

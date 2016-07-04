@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1B3B1C9A-098C-445C-AC51-CA6099B901D2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WpfApplication2</RootNamespace>
+    <AssemblyName>WpfApplication2</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ExcelParser">
+      <HintPath>..\ExcelToDatabase\obj\Debug\ExcelParser.dll</HintPath>
+    </Reference>
+    <Reference Include="GenDB">
+      <HintPath>..\..\..\7.技术文档\GenDB\GenDB.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\7.技术文档\GenDB\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\7.技术文档\Json\Json60r3\Bin\Net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>..\..\..\7.技术文档\Excel\NPOI\4.0\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="Sui.ComponentModel">
+      <HintPath>lib\Sui.ComponentModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls, Version=2012.2.607.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.Data, Version=2012.2.607.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.Input, Version=2012.2.607.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Data, Version=2012.2.607.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Converter\MyJsonConverter.cs" />
+    <Compile Include="Converter\ReflectionConverter.cs" />
+    <Compile Include="Converter\ExcelConverter.cs" />
+    <Compile Include="Entity\SerializerTest.cs" />
+    <Compile Include="Entity\StationInfo.cs" />
+    <Compile Include="Helper\AttEquipment.cs" />
+    <Compile Include="Helper\Copy of ExcelHelper.cs" />
+    <Compile Include="Helper\MyDependencyProperty.cs" />
+    <Compile Include="Helper\MyEvent.cs" />
+    <Compile Include="Helper\MyRoutedUICommands.cs" />
+    <Compile Include="Helper\TableMapping.cs" />
+    <Compile Include="Model\SongwithModelBase.cs" />
+    <Compile Include="MyControl\MyUserControl\ColorPicker.xaml.cs">
+      <DependentUpon>ColorPicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyControl\MyUserControl\TimeCounter.xaml.cs">
+      <DependentUpon>TimeCounter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\MyCommand.cs" />
+    <Compile Include="Model\Song.cs" />
+    <Compile Include="Helper\ExcelHelper.cs" />
+    <Compile Include="ViewModel\ExcelViewModel.cs" />
+    <Compile Include="ViewModel\SongVMs.cs" />
+    <Compile Include="ViewModel\SongVMwithCommand.cs" />
+    <Compile Include="ViewModel\SongVMwithSUICommand.cs" />
+    <Compile Include="ViewModel\SongVM.cs" />
+    <Compile Include="Windows\CommandWindow.xaml.cs">
+      <DependentUpon>CommandWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DependencyPropertyWindow.xaml.cs">
+      <DependentUpon>DependencyPropertyWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ContentControlWindow.xaml.cs">
+      <DependentUpon>ContentControlWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DecoratorWindow.xaml.cs">
+      <DependentUpon>DecoratorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TestClass.cs" />
+    <Compile Include="Windows\ExcelWindow.xaml.cs">
+      <DependentUpon>ExcelWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\JsonWindow.xaml.cs">
+      <DependentUpon>JsonWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MVVMWindow.xaml.cs">
+      <DependentUpon>MVVMWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MyControlsWindow.xaml.cs">
+      <DependentUpon>MyControlsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ResourceWindow.xaml.cs">
+      <DependentUpon>ResourceWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\RoutedEventWindow.xaml.cs">
+      <DependentUpon>RoutedEventWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\UniformGridWindow.xaml.cs">
+      <DependentUpon>UniformGridWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\WCFTestWindow.xaml.cs">
+      <DependentUpon>WCFTestWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WpfApplication2.Business\ApproachInfoManager.cs" />
+    <Compile Include="WpfApplication2.Business\BizBase.cs" />
+    <Compile Include="WpfApplication2.Business\BrakingInfoManager.cs" />
+    <Compile Include="WpfApplication2.Business\BridgeAndTunnelInfoManager.cs" />
+    <Compile Include="WpfApplication2.Business\ChainScissionInfoManager.cs" />
+    <Compile Include="WpfApplication2.Business\CoordinateInfoManager.cs" />
+    <Compile Include="WpfApplication2.Business\DisasterInfoManager.cs" />
+    <Compile Include="WpfApplication2.Business\GradientInfoManager.cs" />
+    <Compile Include="WpfApplication2.Business\GroupInfoManager.cs" />
+    <Compile Include="WpfApplication2.Business\PhaseSplittingInfoManager.cs" />
+    <Compile Include="WpfApplication2.Business\RBCInfoManager.cs" />
+    <Compile Include="WpfApplication2.Business\SignalInfoManager.cs" />
+    <Compile Include="WpfApplication2.Business\SpeedInfoManager.cs" />
+    <Compile Include="WpfApplication2.Business\StationInfoManager.cs" />
+    <Compile Include="WpfApplication2.Business\StationSectionInfoManager.cs" />
+    <Compile Include="WpfApplication2.Business\StationSectionMappingManager.cs" />
+    <Compile Include="WpfApplication2.Business\TransponderLocationManager.cs" />
+    <Compile Include="WpfApplication2.Business\TurnoutInfoManager.cs" />
+    <Compile Include="WpfApplication2.DataAccess\ApproachInfoDAL.cs" />
+    <Compile Include="WpfApplication2.DataAccess\BrakingInfoDAL.cs" />
+    <Compile Include="WpfApplication2.DataAccess\BridgeAndTunnelInfoDAL.cs" />
+    <Compile Include="WpfApplication2.DataAccess\ChainScissionInfoDAL.cs" />
+    <Compile Include="WpfApplication2.DataAccess\CoordinateInfoDAL.cs" />
+    <Compile Include="WpfApplication2.DataAccess\DisasterInfoDAL.cs" />
+    <Compile Include="WpfApplication2.DataAccess\GradientInfoDAL.cs" />
+    <Compile Include="WpfApplication2.DataAccess\GroupInfoDAL.cs" />
+    <Compile Include="WpfApplication2.DataAccess\PhaseSplittingInfoDAL.cs" />
+    <Compile Include="WpfApplication2.DataAccess\RBCInfoDAL.cs" />
+    <Compile Include="WpfApplication2.DataAccess\SignalInfoDAL.cs" />
+    <Compile Include="WpfApplication2.DataAccess\SpeedInfoDAL.cs" />
+    <Compile Include="WpfApplication2.DataAccess\StationInfoDAL.cs" />
+    <Compile Include="WpfApplication2.DataAccess\StationSectionInfoDAL.cs" />
+    <Compile Include="WpfApplication2.DataAccess\StationSectionMappingDAL.cs" />
+    <Compile Include="WpfApplication2.DataAccess\TransponderLocationDAL.cs" />
+    <Compile Include="WpfApplication2.DataAccess\TurnoutInfoDAL.cs" />
+    <Compile Include="WpfApplication2.Data\ApproachInfo.cs" />
+    <Compile Include="WpfApplication2.Data\BrakingInfo.cs" />
+    <Compile Include="WpfApplication2.Data\BridgeAndTunnelInfo.cs" />
+    <Compile Include="WpfApplication2.Data\ChainScissionInfo.cs" />
+    <Compile Include="WpfApplication2.Data\Constants.cs" />
+    <Compile Include="WpfApplication2.Data\CoordinateInfo.cs" />
+    <Compile Include="WpfApplication2.Data\DisasterInfo.cs" />
+    <Compile Include="WpfApplication2.Data\GradientInfo.cs" />
+    <Compile Include="WpfApplication2.Data\GroupInfo.cs" />
+    <Compile Include="WpfApplication2.Data\PhaseSplittingInfo.cs" />
+    <Compile Include="WpfApplication2.Data\RBCInfo.cs" />
+    <Compile Include="WpfApplication2.Data\SignalInfo.cs" />
+    <Compile Include="WpfApplication2.Data\SpeedInfo.cs" />
+    <Compile Include="WpfApplication2.Data\StationInfo.cs" />
+    <Compile Include="WpfApplication2.Data\StationSectionInfo.cs" />
+    <Compile Include="WpfApplication2.Data\StationSectionMapping.cs" />
+    <Compile Include="WpfApplication2.Data\TransponderLocation.cs" />
+    <Compile Include="WpfApplication2.Data\TurnoutInfo.cs" />
+    <Page Include="MyControl\MyUserControl\ColorPicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyControl\MyUserControl\TimeCounter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\MyResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\CommandWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DependencyPropertyWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ContentControlWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DecoratorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Windows\ExcelWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\JsonWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MVVMWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MyControlsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ResourceWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\RoutedEventWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\UniformGridWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\WCFTestWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MyControl\MyCustomControl\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

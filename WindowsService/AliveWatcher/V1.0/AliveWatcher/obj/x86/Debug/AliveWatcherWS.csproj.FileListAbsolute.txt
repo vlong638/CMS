@@ -1,0 +1,2 @@
+E:\0.公用经验\代码库\VL\WindowsService\AliveWatcher\V1.0\AliveWatcher\bin\Debug\AliveWatcher.exe.config
+E:\WorkSpace\0.公用经验\MyCode\VL\WindowsService\AliveWatcher\V1.0\AliveWatcher\bin\Debug\AliveWatcher.exe.config

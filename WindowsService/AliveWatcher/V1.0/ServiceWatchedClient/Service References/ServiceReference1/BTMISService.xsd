@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BTMIS.DataEntity.AndroidEntity" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BTMIS.DataEntity.AndroidEntity" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfTask">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Task" nillable="true" type="tns:Task" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTask" nillable="true" type="tns:ArrayOfTask" />
+  <xs:complexType name="Task">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="a" type="xs:int" />
+      <xs:element minOccurs="0" name="b" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="c" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="d" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="e" type="xs:int" />
+      <xs:element minOccurs="0" name="f" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="g" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="h" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="i" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="j" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="k" type="xs:int" />
+      <xs:element minOccurs="0" name="l" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="m" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Task" nillable="true" type="tns:Task" />
+  <xs:complexType name="ArrayOfCompare">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Compare" nillable="true" type="tns:Compare" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCompare" nillable="true" type="tns:ArrayOfCompare" />
+  <xs:complexType name="Compare">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="a" type="xs:int" />
+      <xs:element minOccurs="0" name="b" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="c" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="d" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="e" type="xs:int" />
+      <xs:element minOccurs="0" name="f" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="g" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="h" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="i" type="xs:int" />
+      <xs:element minOccurs="0" name="j" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="k" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="l" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="m" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="n" type="xs:int" />
+      <xs:element minOccurs="0" name="o" type="xs:int" />
+      <xs:element minOccurs="0" name="p" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Compare" nillable="true" type="tns:Compare" />
+  <xs:complexType name="ArrayOfCadimage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cadimage" nillable="true" type="tns:Cadimage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCadimage" nillable="true" type="tns:ArrayOfCadimage" />
+  <xs:complexType name="Cadimage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="a" type="xs:int" />
+      <xs:element minOccurs="0" name="b" type="xs:int" />
+      <xs:element minOccurs="0" name="c" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="d" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="e" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="f" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cadimage" nillable="true" type="tns:Cadimage" />
+  <xs:complexType name="ArrayOfOperation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Operation" nillable="true" type="tns:Operation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOperation" nillable="true" type="tns:ArrayOfOperation" />
+  <xs:complexType name="Operation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="a" type="xs:int" />
+      <xs:element minOccurs="0" name="b" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="c" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="d" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="e" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="f" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="g" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="h" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="i" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="j" type="xs:int" />
+      <xs:element minOccurs="0" name="k" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="l" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Operation" nillable="true" type="tns:Operation" />
+  <xs:complexType name="ArrayOfPhoto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Photo" nillable="true" type="tns:Photo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPhoto" nillable="true" type="tns:ArrayOfPhoto" />
+  <xs:complexType name="Photo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="a" type="xs:int" />
+      <xs:element minOccurs="0" name="b" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="c" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="d" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Photo" nillable="true" type="tns:Photo" />
+  <xs:complexType name="ArrayOfSystemconfig">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Systemconfig" nillable="true" type="tns:Systemconfig" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSystemconfig" nillable="true" type="tns:ArrayOfSystemconfig" />
+  <xs:complexType name="Systemconfig">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="a" type="xs:int" />
+      <xs:element minOccurs="0" name="b" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="c" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="d" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="e" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Systemconfig" nillable="true" type="tns:Systemconfig" />
+  <xs:complexType name="ArrayOfErrorratio">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Errorratio" nillable="true" type="tns:Errorratio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfErrorratio" nillable="true" type="tns:ArrayOfErrorratio" />
+  <xs:complexType name="Errorratio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="a" type="xs:int" />
+      <xs:element minOccurs="0" name="b" type="xs:int" />
+      <xs:element minOccurs="0" name="c" type="xs:int" />
+      <xs:element minOccurs="0" name="d" type="xs:int" />
+      <xs:element minOccurs="0" name="e" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="f" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="g" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="h" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="i" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Errorratio" nillable="true" type="tns:Errorratio" />
+  <xs:complexType name="ArrayOfLogrecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Logrecord" nillable="true" type="tns:Logrecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLogrecord" nillable="true" type="tns:ArrayOfLogrecord" />
+  <xs:complexType name="Logrecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="a" type="xs:int" />
+      <xs:element minOccurs="0" name="b" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="c" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="d" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="e" type="xs:int" />
+      <xs:element minOccurs="0" name="f" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="g" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="h" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Logrecord" nillable="true" type="tns:Logrecord" />
+  <xs:complexType name="ArrayOfAttachment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Attachment" nillable="true" type="tns:Attachment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAttachment" nillable="true" type="tns:ArrayOfAttachment" />
+  <xs:complexType name="Attachment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="a" type="xs:int" />
+      <xs:element minOccurs="0" name="b" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="c" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="d" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="e" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="f" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Attachment" nillable="true" type="tns:Attachment" />
+  <xs:complexType name="ArrayOfProblemReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProblemReport" nillable="true" type="tns:ProblemReport" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProblemReport" nillable="true" type="tns:ArrayOfProblemReport" />
+  <xs:complexType name="ProblemReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="a" type="xs:int" />
+      <xs:element minOccurs="0" name="b" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="c" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="d" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="e" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProblemReport" nillable="true" type="tns:ProblemReport" />
+</xs:schema>

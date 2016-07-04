@@ -1,0 +1,6 @@
+E:\WorkSpace\0.公用经验\MyCode\VL\Services\WCF\V1.0\WCFTester\bin\Debug\WCFTester.exe.config
+E:\WorkSpace\0.公用经验\MyCode\VL\Services\WCF\V1.0\WCFTester\bin\Debug\WCFTester.exe
+E:\WorkSpace\0.公用经验\MyCode\VL\Services\WCF\V1.0\WCFTester\bin\Debug\WCFTester.pdb
+E:\WorkSpace\0.公用经验\MyCode\VL\Services\WCF\V1.0\WCFTester\obj\Debug\WCFTester.csprojResolveAssemblyReference.cache
+E:\WorkSpace\0.公用经验\MyCode\VL\Services\WCF\V1.0\WCFTester\obj\Debug\WCFTester.exe
+E:\WorkSpace\0.公用经验\MyCode\VL\Services\WCF\V1.0\WCFTester\obj\Debug\WCFTester.pdb

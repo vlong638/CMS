@@ -1,0 +1,5 @@
+E:\工作文档\6.Project\MyWPF\DataAccessLayer\bin\Debug\DataAccessLayer.exe
+E:\工作文档\6.Project\MyWPF\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+E:\工作文档\6.Project\MyWPF\DataAccessLayer\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\工作文档\6.Project\MyWPF\DataAccessLayer\obj\x86\Debug\DataAccessLayer.exe
+E:\工作文档\6.Project\MyWPF\DataAccessLayer\obj\x86\Debug\DataAccessLayer.pdb

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ErrorInform 关于配置更改="配置内容更改后需要重启服务以使其生效!">
+  <Mails 关于多发="同一发送邮箱内To及飞联Accounts用;隔开">
+    <Mail>
+      <Host>smtp.qq.com</Host>
+      <Port>587</Port>
+      <EnableSSL>false</EnableSSL>
+      <Account>419352357@qq.com</Account>
+      <Password>xia19100128</Password>
+      <From>419352357@qq.com</From>
+      <To>419352357@qq.com</To>
+      <Subject>主题</Subject>
+      <Body>内容</Body>
+    </Mail>
+    <Mail>
+      <Host>smtp.sina.com</Host>
+      <Port>25</Port>
+      <EnableSSL>false</EnableSSL>
+      <Account>vlong638@sina.cn</Account>
+      <Password>701616</Password>
+      <From>vlong638@sina.cn</From>
+      <To>vlong638@sina.cn;vlong637@sina.cn</To>
+      <Subject>主题</Subject>
+      <Body>内容</Body>
+    </Mail>
+  </Mails>
+  <FeiLian>
+    <Accounts>tina_071;lw_011</Accounts>
+    <InformMessage>xx服务出现yy错误.</InformMessage>
+  </FeiLian>
+</ErrorInform>
